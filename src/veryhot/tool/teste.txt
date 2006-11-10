@@ -1,0 +1,21 @@
+mousePressed()
+if ( f != null && f instanceof LineFigure && ((LineFigure)f).isClosed() ) {
+			// We are editing a line.
+			Locator betweenLocator = getBetweenLocator( e.getPoint() );
+			lineFigure = (LineFigure)f;
+			System.out.println( "Changing line's working locator" );
+			if ( lineFigure.setWorkingLocator( betweenLocator) == false ) {;
+				System.out.println( "Adding poing and changing line's working locator" );
+				lineFigure.add( betweenLocator );
+				lineFigure.setWorkingLocator( betweenLocator );
+			}				
+		} else {
+			
+mouseDragged()
+		lineFigure.moveTo( new Locator( e.getPoint() ) );
+
+mouseReleased()
+		if ( lineFigure != null && lineFigure.isClosed() ) {
+			lineFigure.moveTo( new Locator( e.getPoint() ) );
+		}
+
