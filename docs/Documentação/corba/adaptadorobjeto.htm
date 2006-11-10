@@ -1,0 +1,30 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
+
+<HTML>
+
+<HEAD>
+	<TITLE>Adaptadores de objeto</TITLE>
+	<LINK REV="Made" HREF="mailto:magsilva@din.uem.br">
+	<META NAME="Author" CONTENT="Marco Aurélio Graciotto Silva">
+	<META NAME="Keywords" CONTENT="corba,adaptador,objeto">
+	<META NAME="Generator" CONTENT="NoteTab Light 4.84 HTML4-strict.clb">
+</HEAD>
+
+<BODY>
+
+<H1>Portable Object Adapter - POA</h1>
+
+<P>O POA é um mediador entre o ORB e os objetos CORBA. Ele é responsável criação dos objetos CORBA e suas respectivas referências, demuplexação de pedidos feitos para um determinado objeto, envio de requisições para um servant apropriado que implemente o objeto CORBA, ativação e desativição de objetos CORBA.</p>
+
+<P>Você deve ter reparado o surgimento de um novo termo nesta sopa de letras que é o CORBA: servants. Ele é um objeto feito em uma linguagem específica. Em outroas palavras, ele é a incarnação do objeto CORBA prometido em uma IDL.</P>
+
+<P>Talvez esteja parecendo estranha a existência do POA no CORBA: por que não permitir os objetos serem ligados diretos, por que esta abstração? Bem, existem vantagens nisto:</P>
+<UL>
+	<LI>O POA suporta dois tipos de objetos: persistentes e transientes (um objeto CORBA que deixa de existir quando seu respectivo POA é terminado).</LI>
+	<LI>Permite que um único objeto CORBA seja encarnado por vários servants</LI>
+	<LI>Permite que vários objetos CORBA sejam encarnados um único servant</LI>
+	<LI>Possibilita uma maior granularidade quanto a configuração dos objetos CORBA (modelos de thread, segurança).
+</uL>
+
+</BODY>
+</HTML>

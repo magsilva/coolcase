@@ -1,0 +1,24 @@
+\subsection{Extensão da linguagem UML}
+
+As extensões da linguagem UML utilizadas na definição de requisitos são implementadas através do uso de esteriótipos e tagged values. Estes mecanismos de extensão da UML, definidos no pacote ExtensionMechanisms do Foundation Packages, foram feitos justamente para acomodar possíveis dados extras necessários aos modelos e processos de software. Outra possibilidade para acomodar as necessidades deste projeto seria criar uma extensão do metamodelo da UML, definindo as novas metaclasses e metaconstrutores através da MOF. Porém, o uso dos mecanismos de extensão da UML são suficientes para atender as necessidades do projeto.
+
+No pacote Extension Mechanisms da UML, temos definidos duas novas metaclasses: Stereotype, TaggedValue. Além disso, temos a metaclasse Constraint, do pacote Core. Estes mecanismos podem ser aplicados a qualquer ModelElement ou derivado deste, possuindo um valor semântico maior que qualquer outro mecanismo da UML (especialização, relacionamentos).
+
+Um esteriótipo é uma metaclasse que altera a elemento do modelo de maneira que ele pareça ser uma instância de um metamodelo virtual (virtual porque ele não é definido da UML, mas parece que é). Pode haver, no máximo, um esteriótipo associado a um modelo de elemento. Todos os tagged values e restrições aplicados em um esteriótipo também são válidos no modelo de elemento, atuando assim como uma pseudo metaclasse descrevendo o o elemento. Outra característica interessante é que pode-se derivar um esteriótipo de outro esteriótipo (um esteriótipo é uma especialiação de modelElement).
+
+Tagged values são propriedades arbitrárias associadas a um elemento do modelo, representadas por uma tupla (nome,valor). Pode-se associar qualquer número de tagged values a um elemento, salvaguardando a restrição destas serem únicas quanto a este.
+
+Constraints permitem que sejam definidas restrições semânticas ao elemento do modelo, utilizando para isto uma linguagem, tal como a OCL (que foi feita especificadamente para isto), uma linguagem de programação, notação matemática, linguagem natural. Geralmente utilizam-se linguagens definidas formalmente, possibilitando assim uma aplicação deste regras através de ferramentas. Uma restrição pode possuir o atributo "body" e a associação "constrainedElement". O corpo "body" pode possuir uma expressão booleana que define a restrição. Esta expressão sempre deve ser verdadeira para instâncias de elementos com esta restrição quando o sistema está estável, ou seja, não está sendo feita nenhuma operação no sistema. Caso contrário, é dito que o modelo está mal formado. A associação "constrainedElement" é uma lista ordenada dos elementos do modelo sujeitos à uma restrição. Se o elemento em questão for um esteriótipo, todos os elementos que possuem aquele esteriótipo também estarão sujeitos a restrição.
+
+Estudados os mecanismos de extensão da UML, definiu-se, então, as extensões da UML a serem utilizadas a fim de representarmos nossa linguagem. Escolheu-se pela utilização de tagged values. Para os atores, foram definidos os seguinte:
+\item isDistributed
+\item isParallel
+\item isExclusive
+Para os casos de uso:
+\item isSequential
+\item isDistributed
+E, finalmente, para os relacionamentos:
+\item isSequential
+\item isParallel
+
+Uma questão observada durante a pesquisa realizada sobre UML foi a complexidade da linguagem. Esta questão já fora levantada inclusive pelo grupo que desenvolve a UML, a OMG, que, para sua próxima grande versão, a 2.0, pretende reduzir tal complexidade. Observou-se em listas de discussões sobre o assunto que, inclusive, diversas ferramentas estão utilizando modelos ligeiramente incompatíveis, o que acaba prejudicando o esforço de uma implementação completa da UML. Por isso, optou-se por guardar os dados inerentes aos níveis mais altos e somente aqueles mais utilizados.

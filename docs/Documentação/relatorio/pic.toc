@@ -1,0 +1,36 @@
+\select@language {brazil}
+\contentsline {section}{\numberline {1}Introdu\c c\~ao}{5}
+\contentsline {section}{\numberline {2}Objetivos}{5}
+\contentsline {section}{\numberline {3}Materiais e m\'etodos}{6}
+\contentsline {subsection}{\numberline {3.1}Reposit\'orios}{6}
+\contentsline {subsubsection}{\numberline {3.1.1}kMail}{6}
+\contentsline {subsubsection}{\numberline {3.1.2}WebCATET}{7}
+\contentsline {subsubsection}{\numberline {3.1.3}Reposit\'orio de Projetos do NIST}{9}
+\contentsline {subsubsection}{\numberline {3.1.4}Osirix}{9}
+\contentsline {subsection}{\numberline {3.2}CORBA}{10}
+\contentsline {subsection}{\numberline {3.3}T\'ecnicas aplic\'aveis no processo de engenharia de requisitos}{11}
+\contentsline {subsubsection}{\numberline {3.3.1}Uso de padr\~oes na constru\c c\~ao de cen\'arios}{11}
+\contentsline {subsubsection}{\numberline {3.3.2}Identifica\c c\~ao de Padr\~oes de Reutiliza\c c\~ao de Requisitos de Sistemas de Informa\c c\~ao}{15}
+\contentsline {subsubsection}{\numberline {3.3.3}Pontos de vista}{16}
+\contentsline {subsubsection}{\numberline {3.3.4}REQAV: Modelo para Descri\c c\~ao, Qualifica\c c\~ao, An\'alise e Valida\c c\~ao de Requisitos}{17}
+\contentsline {subsubsection}{\numberline {3.3.5}Usando diferentes meios de comunica\c c\~ao na negocia\c c\~ao de requisitos}{18}
+\contentsline {subsection}{\numberline {3.4}Formatos para interc\^ambio de modelos}{19}
+\contentsline {subsection}{\numberline {3.5}Persist\^encia utilizando banco de dados}{20}
+\contentsline {subsection}{\numberline {3.6}Extens\~ao da linguagem UML}{21}
+\contentsline {section}{\numberline {4}Resultados e Discuss\~ao}{24}
+\contentsline {subsection}{\numberline {4.1}An\'alise das diversas t\'ecnicas estudadas}{24}
+\contentsline {subsection}{\numberline {4.2}Cria\c c\~ao de um sistema gerenciador de conhecimento}{24}
+\contentsline {subsection}{\numberline {4.3}Proposta de Processo de Engenharia de Requisitos}{25}
+\contentsline {subsection}{\numberline {4.4}Framework veryhot}{26}
+\contentsline {subsection}{\numberline {4.5}Microkernel}{28}
+\contentsline {subsection}{\numberline {4.6}Arquitetura do Sistema}{29}
+\contentsline {subsection}{\numberline {4.7}Componentes do sistema}{30}
+\contentsline {subsubsection}{\numberline {4.7.1}Entidades}{30}
+\contentsline {subsubsection}{\numberline {4.7.2}Requisitos}{31}
+\contentsline {subsection}{\numberline {4.8}Casos de uso e atores}{31}
+\contentsline {subsection}{\numberline {4.9}Modelo de caso de uso e diagramas de caso de uso}{31}
+\contentsline {subsection}{\numberline {4.10}Vis\~oes}{32}
+\contentsline {section}{\numberline {5}CoolCase}{32}
+\contentsline {section}{\numberline {6}Conclus\~ao}{33}
+\contentsline {section}{\numberline {7}Bibliografia}{34}
+\contentsline {section}{\numberline {8}Anexos}{36}

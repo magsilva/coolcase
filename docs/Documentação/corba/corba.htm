@@ -1,0 +1,34 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
+
+<HTML>
+
+<HEAD>
+	<TITLE>CORBA</TITLE>
+	<LINK REV="Made" HREF="mailto:magsilva@din.uem.br">
+	<META NAME="Author" CONTENT="Marco Aurélio Graciotto Silva">
+	<META NAME="Keywords" CONTENT="corba,orb">
+	<META NAME="Generator" CONTENT="NoteTab Light 4.84 HTML4-strict.clb">
+</HEAD>
+
+<BODY>
+
+<IMG SRC="corba.jpg" WIDTH="267" HEIGHT="73" ALT="CORBA">
+
+<P>CORBA é uma arquitetura de objetos distribuídos que permite que objetos se comuniquem, independente da localização, linguagem utilizada, plataforma em que está sendo executado. Assim, garante-se flexibilidade para expandir o sistema e, talvez o mais importante para muitas empresas, o aproveitamento de sistemas já existentes.</P>
+
+<DIV ALIGN="CENTER">
+	<IMG SRC="arquitetura.gif" ALT="Arquitetura do CORBA">
+</DIV>
+
+<p>Conceitualmente, a arquitetura do CORBA está descrita acima. Repare como os objetos nunca se comunicam diretamente com o ORB, sempre fazendo uso de chamadas padronizadas. Repare também a importância da IDL. Hum, não entendeu?</P>
+
+<P>A IDL é peça fundamental do CORBA. Como todos os objetos se comunicam somente através de mensagens, na verdade chamadas de métodos de objetos remotos, a única coisa que precisa ser pública é a interface do objeto. Este é o papel da IDL. A Interface Description Language é uma linguagem feita especialmente para definir estas interfaces. Estruturas passadas por parâmetros também são definidas com ela, assim como as possíveis exceções que podem ser lançadas. Ou seja, ela padroniza todos os dados que vamos transferir entre os objetos do sistema.</P>
+
+<P>Outra característica importante destacada é a interoperabilidade entre os ORBs. A independência que os objetos têm dos ORBs, apesar de estar clara, não é tão real assim atualmente. A maioria das implementações são baseadas em bibliotecas, ou seja, cada objeto tem seu próprio ORB, as vezes com caracteristicas especiais que impedem a mudança de um ORB para outro de maneira fácil. No entanto, o GIOP permite que os ORBs se comuniquem entre si, o que torna a caracteristica anterior menos importante.</p>
+
+<P>Existem outras peças chaves no CORBA que merecem destaque: o adaptador de objetos, os depósitos de interface e de implementação, os serviços e as facilidades CORBA.</P>
+
+<P>Existem várias implentações da especificação CORBA: ORBacus, MICO, ORBit, Visibroker. Cada implementação tem características bem especificas: alto desempenho, portabilidade, capacidades real-time. Todas, no entanto, obedecem a especificação do CORBA:
+
+</BODY>
+</HTML>

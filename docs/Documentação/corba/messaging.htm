@@ -1,0 +1,31 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
+
+<HTML>
+
+<HEAD>
+	<TITLE>CORBA Messaging</TITLE>
+	<LINK REV="Made" HREF="mailto:magsilva@din.uem.br">
+	<META NAME="Author" CONTENT="Marco Aurélio Graciotto Silva">
+	<META NAME="Keywords" CONTENT="corba,messaging">
+	<META NAME="Generator" CONTENT="NoteTab Light 4.84 HTML4-strict.clb">
+</HEAD>
+
+<BODY>
+
+<h1>CORBA Messaging</h1>
+
+<P>Durante muito tempo, o CORBA se baseou em comunicação síncrona, que não é adequada para sistemas mais complexos. Temos problemas como desconexões, dipositivos móveis, para citar poucos. Por isto foi criada esta especificação. Ela define mensagens assíncronas, invocações independentes de tempo e facilidades para especificar qualidade de serviço para as mensagens.</P>
+
+<P>Os seguintes modos de envio de mensagens estão disponíveis:</P>
+<UL>
+	<LI><STRONG>Síncrona:</STRONG> Envia a mensagem e bloqueia, esperando a resposta.</LI>
+	<LI><STRONG>Síncrona deferida:</STRONG> Envia a mensagem e continua a execução. A resposta poderá ser pega depois.</LI>
+	<LI><STRONG>Oneway:</STRONG> Envia a mensagem. O ORB fará o melhor possível para entregar a mensagem (mas não garante). Não há resposta.</LI>
+	<LI><STRONG>Callback:</STRONG> É enviada, junto com a mensagem, uma referência a um objeto que será utilizada para o envio da resposta.</LI>
+	<LI><STRONG>Pollig:</STRONG> Mensagem retorna imediatamente um valuetype que pode ser utilizada para esperar a resposta separadamente.</LI>
+</UL>
+
+
+
+</BODY>
+</HTML>

@@ -1,0 +1,29 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
+
+<HTML>
+
+<HEAD>
+	<TITLE>GIOP</TITLE>
+	<LINK REV="Made" HREF="mailto:magsilva@din.uem.br">
+	<META NAME="Author" CONTENT="Marco Aurélio Graciotto Silva">
+	<META NAME="Keywords" CONTENT="corba,giop">
+	<META NAME="Generator" CONTENT="NoteTab Light 4.84 HTML4-strict.clb">
+</HEAD>
+
+<BODY>
+
+<h1>General Inter-ORB Protocol (GIOP)</h1>
+
+<p>GIOP é uma coleção de mensagens que os ORBs podem utilizar entre si. No entanto, isso não é o bastante. Ele não especifica como essas mensagens serão transportadas. Temos, portanto, uma implementação de GIOP que utiliza TCP/IP para para isso: o Internet Inter-ORB Protocol (IIOP). Isto não é uma opção: todo Object Request Broker deve suportar o IIOP. Para garantir a operação com outras redes, temos o Environment Specific Inter-ORB Protocol (ESIOP), que mapeia as mensagens GIOP para outros protocolos (DCE - Distributed Computing Environment - por exemplo).</P>
+
+<P>Trocando em miudos, nós temos o GIOP estabelecendo as mensagens, o IIOP como padrão de implementação, o ESIOP garantindo a heterogeinidade. Um ORB que tenha um ESIOP não precisa implementar o IIOP: pode simplesmente oferecer uma ponte entre o IIOP e o ESIOP.</P>
+
+<P>O GIOP consiste em três partes:</p>
+<UL>
+	<LI><STRONG>Common Data Representation (CDR):</STRONG> Mapeia tipos da OMG IDL para tipos de baixo nível para uso em redes, além de definir características tais como ordenação de byte variável (entre big e little endian), tipos primitivos alinhados</LI>
+	<LI><STRONG>Formato de mensagens GIOP (existem sete)</STRONG></LI>
+	<LI><STRONG>Considerações sobre o transporte de mensagens GIOP:</STRONG> tem de ser orientado a conexão, confiável, ser visto como um fluxo de bytes, notificação de perda de conexão, a conexão inicial pode ser mapeada para uma do modelo TCP/IP.</LI>
+</UL>
+
+</BODY>
+</HTML>

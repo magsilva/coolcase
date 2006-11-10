@@ -1,0 +1,57 @@
+This is BibTeX, Version 0.99c (Web2C 7.3.1)
+The top-level auxiliary file: pic.aux
+The style file: abnt-alf.bst
+Reallocated wiz_functions (elt_size=4) to 6000 items from 3000.
+Database file #1: pic.bib
+Warning--I didn't find a database entry for "leite:1997"
+Warning--I didn't find a database entry for "schoman:1997"
+Warning--I didn't find a database entry for "mullery:1979"
+Warning--I didn't find a database entry for "finkelstein:1990"
+Warning--I didn't find a database entry for "leite:1989"
+Warning--I didn't find a database entry for "fickas:1991"
+Warning--I didn't find a database entry for "eyanaga:1997"
+Warning--I didn't find a database entry for "wooldridge:2000"
+Warning--empty journal in pfaffenseller:2000
+Warning--empty journal in sommerville:1997
+You've used 28 entries,
+            3784 wiz_defined-function locations,
+            874 strings with 9345 characters,
+and the built_in function-call counts, 15514 in all, are:
+= -- 1328
+> -- 404
+< -- 28
++ -- 182
+- -- 119
+* -- 821
+:= -- 1801
+add.period$ -- 105
+call.type$ -- 28
+change.case$ -- 222
+chr.to.int$ -- 0
+cite$ -- 30
+duplicate$ -- 1205
+empty$ -- 1461
+format.name$ -- 223
+if$ -- 3727
+int.to.chr$ -- 0
+int.to.str$ -- 0
+missing$ -- 294
+newline$ -- 135
+num.names$ -- 57
+pop$ -- 720
+preamble$ -- 1
+purify$ -- 114
+quote$ -- 0
+skip$ -- 699
+stack$ -- 0
+substring$ -- 603
+swap$ -- 630
+text.length$ -- 28
+text.prefix$ -- 0
+top$ -- 0
+type$ -- 108
+warning$ -- 2
+while$ -- 97
+width$ -- 0
+write$ -- 342
+(There were 10 warnings)

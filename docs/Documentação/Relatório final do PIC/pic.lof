@@ -1,0 +1,28 @@
+\select@language {brazil}
+\contentsline {figure}{\numberline {1}{\ignorespaces Exemplo de regra aplic\'avel a um telefone, definindo condi\c c\~oes para avaliar o teclado de um telefone.}}{10}
+\contentsline {figure}{\numberline {2}{\ignorespaces Mecanismos para requisi\c c\~ao e acionamento de objetos}}{14}
+\contentsline {figure}{\numberline {3}{\ignorespaces Interfaces do Object Request Broker}}{14}
+\contentsline {figure}{\numberline {4}{\ignorespaces Descri\c c\~ao do padr\~ao Negocia\c c\~ao Terminada com Produ\c c\~ao.}}{19}
+\contentsline {figure}{\numberline {5}{\ignorespaces Exemplo de arvore de decis\~ao para a sele\c c\~ao de padr\~oes (retirado do artigo estudado).}}{20}
+\contentsline {figure}{\numberline {6}{\ignorespaces Pontos de vista e estrutura das informa\c c\~oes}}{25}
+\contentsline {figure}{\numberline {7}{\ignorespaces Modelo do processo VORD}}{26}
+\contentsline {figure}{\numberline {8}{\ignorespaces Classes de ponto de vista do VORD}}{26}
+\contentsline {figure}{\numberline {9}{\ignorespaces Cinco configura\c c\~oes de grupo: (a) cara a cara e (b) distribu\IeC {\'\i }da.}}{29}
+\contentsline {figure}{\numberline {10}{\ignorespaces Representa\c c\~ao dos relacionamentos}}{34}
+\contentsline {subfigure}{\string \numberline {10(a)}{\ignorespaces Relacionamento entre casos de uso}}{34}
+\contentsline {subfigure}{\string \numberline {10(b)}{\ignorespaces Relacionamento entre casos de uso paralelos}}{34}
+\contentsline {figure}{\numberline {11}{\ignorespaces Representa\c c\~ao dos atores}}{34}
+\contentsline {subfigure}{\string \numberline {11(a)}{\ignorespaces Ator exclusivo}}{34}
+\contentsline {subfigure}{\string \numberline {11(b)}{\ignorespaces Ator paralelo}}{34}
+\contentsline {subfigure}{\string \numberline {11(c)}{\ignorespaces Ator distribu\IeC {\'\i }do}}{34}
+\contentsline {subfigure}{\string \numberline {11(d)}{\ignorespaces Ator paralelo e distribu\IeC {\'\i }do}}{34}
+\contentsline {figure}{\numberline {12}{\ignorespaces Representa\c c\~ao dos casos de uso}}{35}
+\contentsline {subfigure}{\string \numberline {12(a)}{\ignorespaces Caso de uso sequencial}}{35}
+\contentsline {subfigure}{\string \numberline {12(b)}{\ignorespaces Caso de uso distribu\IeC {\'\i }do}}{35}
+\contentsline {figure}{\numberline {13}{\ignorespaces Diagrama de classes - Figures, DrawingPanel, ObserverArgument (package veryhot)}}{38}
+\contentsline {figure}{\numberline {14}{\ignorespaces Diagrama de classes - Tool - (package veryhot.tool)}}{39}
+\contentsline {figure}{\numberline {15}{\ignorespaces Diagrama de classes - Kernel}}{40}
+\contentsline {figure}{\numberline {16}{\ignorespaces Arquitetura da ferramenta}}{41}
+\contentsline {figure}{\numberline {17}{\ignorespaces Arquitetura b\'asica do sistema}}{42}
+\contentsline {figure}{\numberline {18}{\ignorespaces Diagrama de classe da CoolCase}}{44}
+\contentsline {figure}{\numberline {19}{\ignorespaces Prot\'otipo da ferramenta em funcionamento}}{44}

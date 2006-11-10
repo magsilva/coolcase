@@ -1,0 +1,47 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
+
+<HTML>
+
+<HEAD>
+	<TITLE>CORBA</TITLE>
+	<LINK REV="Made" HREF="mailto:magsilva@din.uem.br">
+	<META NAME="Author" CONTENT="Marco Aurélio Graciotto Silva">
+	<META NAME="Keywords" CONTENT="corba">
+	<META NAME="Description" CONTENT="Corba">
+	<META NAME="Generator" CONTENT="NoteTab Light 4.84 HTML4-strict.clb">
+</HEAD>
+
+<BODY>
+
+<h1>OMA - Object Managment Architecture</h1>
+
+<hr>
+
+<P>Da necessidade de implementação de sistemas distribuídos surgiram várias soluções: CORBA, DCOM, diversas implementações de RPC (por exemplo, o SunRPC), etc. Esta última foi, e continua sendo, muito utilizada. Mas agora tente imaginar um software complexo, com milhões de linhas de código, utilizando somente o RPC. Seria necessária uma política rígida quanto aos nomes das funções, um planejamento adequando sobre a arquitetura do sistema, a inserção de novos componentes em tempo de execução seria uma tarefa complexa e, provavelmente, nada transparente. É claro, algumas dificuldades podem ser contornadas. Mas o que se notou é que, quanto mais adaptações eram feitas nos RPC, mais se aproximava de um paradigma orientado a objeto. Algumas pessoas, então, resolveram começar do zero, criando soluções mais abrangentes, sem remendos, mais clara. Um exemplo seria a OMG.</p>
+
+<P>O OMG, Object Management Group, é um consórcio de empresas dedicado a criar soluções para sistemas distribuídos. Acredita vieemente que a orientação a objetos é a solução para todos os problemas e aposta alto nisso. Muitos podem discordar, mas o OMG vem demonstrando, na prática, que esse paradigma é bem adequado para a criação de sistemas tão complexos. Suas soluções ajudam desde o projeto do software (MOF, UML) até na implementação de sistemas complexos (Corba Services, Corba Facilities).</p>
+
+<P>Conceitualmente, tudo que a OMG deseja está visível na OMA - Object Managment Architecture: objetos distribuídos, facilidades, serviços, tudo se comunicando, interagindo através do ORB (Object Request Broker). A partir desta visão, desenvolveu-se a solução, daí o porquê dela não ser tão comum nos programas até pouco tempo (ao contrário do DCOM, cujo desenvolvimento foi up-botton, o da OMA foi botton-up). A concretização deste "sonho" começa com o CORBA - Common Object Request Broker Arquitecture - que é a espinha dorsal, ao menos do ponto de vista mais visível. Temos outras tecnologias já desenvolvidas tais como MOF, UML, CWM e ??? que suportam e expandem o que já temos pesquisado com CORBA.</P>
+
+<P>Abaixo temos um diagrama mostrando que a OMA nos propõe:</p>
+<DIV ALIGN="CENTER">
+	<IMG SRC="oma.gif" ALT="OMA">
+</DIV>
+
+<P>Uma pequena explicação de cada ítem contido no diagrama:</P>
+<UL>
+	<LI><STRONG>Object Request Broker:</STRONG> Provê mecanismos para a comunicação entre os objetos de maneira transparente.</LI>
+	<LI><STRONG>Object Services (CORBAServices):</STRONG> São interfaces independentes de domínio, muito comuns em sistemas distribuídos. Na verdade, nenhum sistema distribuído poderia ser construído sem as funcionalidades oferecidas pelos Object Services.Exemplos de Object Services são o Naming Service e o Trading Service.</LI>
+	<LI><STRONG>Common Facilities (CORBAFacilities):</STRONG> Diferentemente do Object Services, estas interfaces são orientadas a aplicações destinadas ao usuário final.</LI>
+	<LI><STRONG>Domain Interfaces:</STRONG> São destinadas a aplicações de domínios especifícos.</LI>
+	<LI><STRONG>Application Interfaces:</STRONG> São específicas de cada aplicação, logo não fazem parte do padrão. No entanto, caso seja detectado que elas são úteis a OMA em geral, elas podem ser adicionadas ao padrão.</LI>
+</UL>
+
+
+
+
+
+
+</BODY>
+
+</HTML>

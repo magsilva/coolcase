@@ -1,0 +1,5 @@
+Basicamente todos as classes da biblioteca Swing extendem a classe JComponent. Esta, por sua vez, extende a class Component da AWT, que extende a classe Container. Um objeto Container pode conter outro objeto dentro de si. Isso dá um grande grau de liberdade quanto à criação de interfaces. No entanto, nem todos as classes podem atuar como Container. Nada o impede de experimentar o que ocorre, porém os efeitos podem ser bizarros (ou não).
+
+É interessante entender que, conforme vamos adicionando componentes, vamos criando uma hierarquia, uma árvore. A maneira como os objetos são desenhados na tela deriva desta árvore. Primeiro desenhamos os pais, depois os filhos e assim por diante. Ou seja, desenhamos os objetos maiores e, conforme descemos a árvore, restringimos a área que atualizamos.
+
+Cada componente é responsável quanto ao seu desenho e ao desenho dos componentes filhos dele. Ou seja, ele precisa saber como ele é desenhado, como sua borda é desenhada e como seus filhos são desenhados.

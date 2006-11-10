@@ -1,0 +1,432 @@
+This is pdfTeX, Version 3.14159-13d (Web2C 7.3.1) (format=pdflatex 2001.6.23)  24 SEP 2001 13:26
+**pic
+(pic.tex[/usr/share/texmf/pdftex/config/pdftex.cfg]
+LaTeX2e <1998/12/01> patch level 1
+Babel <v3.6x> and hyphenation patterns for american, french, german, ngerman, i
+talian, portuges, spanish, nohyphenation, loaded.
+(/usr/share/texmf/tex/latex/base/article.cls
+Document Class: article 1999/01/07 v1.4a Standard LaTeX document class
+(/usr/share/texmf/tex/latex/base/size12.clo
+File: size12.clo 1999/01/07 v1.4a Standard LaTeX file (size option)
+)
+\c@part=\count79
+\c@section=\count80
+\c@subsection=\count81
+\c@subsubsection=\count82
+\c@paragraph=\count83
+\c@subparagraph=\count84
+\c@figure=\count85
+\c@table=\count86
+\abovecaptionskip=\skip41
+\belowcaptionskip=\skip42
+\bibindent=\dimen102
+)
+(/usr/share/texmf/tex/generic/babel/babel.sty
+Package: babel 1999/05/05 v3.6x The Babel package
+
+(/usr/share/texmf/tex/generic/babel/portuges.ldf
+Language: portuges 1999/04/16 v1.2l Portuguese support from the babel system
+
+(/usr/share/texmf/tex/generic/babel/babel.def
+File: babel.def 1999/05/05 v3.6x Babel common definitions
+\babel@savecnt=\count87
+\U@D=\dimen103
+)
+\l@brazil = a dialect from \language\l@portuges 
+Package babel Info: Making " an active character on input line 124.
+))
+(/usr/share/texmf/tex/latex/base/inputenc.sty beta test version
+Package: inputenc 1998/03/05 v0.97 Input encoding file (test version: still lia
+ble to change)
+
+(/usr/share/texmf/tex/latex/base/latin1.def
+File: latin1.def 1998/03/05 v0.97 Input encoding file (test version: still liab
+le to change)
+))
+(/usr/share/texmf/tex/latex/base/fontenc.sty
+Package: fontenc 1999/02/24 v1.9t Standard LaTeX package
+
+(/usr/share/texmf/tex/latex/base/t1enc.def
+File: t1enc.def 1999/02/24 v1.9t Standard LaTeX file
+LaTeX Font Info:    Redeclaring font encoding T1 on input line 25.
+))
+(/usr/share/texmf/tex/latex/psnfss/times.sty
+Package: times 1999/03/29 PSNFSS v.7.2 Times font as default roman : S Rahtz
+)
+(/usr/share/texmf/tex/latex/tools/tabularx.sty
+Package: tabularx 1999/01/07 v2.07 `tabularx' package (DPC)
+
+(/usr/share/texmf/tex/latex/tools/array.sty
+Package: array 1998/05/13 v2.3m Tabular extension package (FMi)
+\col@sep=\dimen104
+\extrarowheight=\dimen105
+\NC@list=\toks14
+\extratabsurround=\skip43
+\backup@length=\skip44
+)
+\TX@col@width=\dimen106
+\TX@old@table=\dimen107
+\TX@old@col=\dimen108
+\TX@target=\dimen109
+\TX@delta=\dimen110
+\TX@cols=\count88
+\TX@ftn=\toks15
+)
+(/usr/share/texmf/tex/latex/graphics/graphicx.sty
+Package: graphicx 1999/02/16 v1.0f Enhanced LaTeX Graphics (DPC,SPQR)
+
+(/usr/share/texmf/tex/latex/graphics/keyval.sty
+Package: keyval 1999/03/16 v1.13 key=value parser (DPC)
+\KV@toks@=\toks16
+)
+(/usr/share/texmf/tex/latex/graphics/graphics.sty
+Package: graphics 1999/02/16 v1.0l Standard LaTeX Graphics (DPC,SPQR)
+
+(/usr/share/texmf/tex/latex/graphics/trig.sty
+Package: trig 1999/03/16 v1.09 sin cos tan (DPC)
+)
+(/usr/share/texmf/tex/latex/config/graphics.cfg)
+Package graphics Info: Driver file: pdftex.def on input line 80.
+
+(/usr/share/texmf/tex/latex/graphics/pdftex.def
+File: pdftex.def 1999/01/26 v0.02l graphics/color for pdftex
+\Gread@gobject=\count89
+))
+\Gin@req@height=\dimen111
+\Gin@req@width=\dimen112
+)
+(/usr/share/texmf/tex/latex/misc/float.sty
+Package: float 1999/05/29 v1.2d Float enhancements (AL)
+\c@float@type=\count90
+\float@box=\box26
+\@floatcapt=\box27
+)
+(/usr/share/texmf/tex/latex/tools/indentfirst.sty
+Package: indentfirst 1995/11/23 v1.03 Indent first paragraph (DPC)
+) (abnt-alf.sty
+(/usr/share/texmf/tex/latex/cite/cite.sty
+Package: cite 1999/04/23  v 3.8
+))
+(/usr/share/texmf/tex/latex/misc/subfigure.sty
+Package: subfigure 1995/03/06 v2.0 subfigure package
+
+Package: subfigure 1995/03/06 v2.0
+\c@subfigure=\count91
+\c@lofdepth=\count92
+\c@subtable=\count93
+\c@lotdepth=\count94
+) (/usr/share/texmf/tex/latex/tools/calc.sty
+Package: calc 1998/07/07 v4.1b Infix arithmetic (KKT,FJ)
+\calc@Acount=\count95
+\calc@Bcount=\count96
+\calc@Adimen=\dimen113
+\calc@Bdimen=\dimen114
+\calc@Askip=\skip45
+\calc@Bskip=\skip46
+LaTeX Info: Redefining \setlength on input line 49.
+LaTeX Info: Redefining \addtolength on input line 50.
+\calc@denominator=\count97
+)
+(/usr/share/texmf/tex/latex/misc/geometry.sty
+Package: geometry 1998/04/08 v2.0a Page Geometry
+\geom@cnth=\count98
+\geom@cntv=\count99
+
+(/usr/share/texmf/tex/latex/config/geometry.cfg)) (pic.aux)
+\openout1 = `pic.aux'.
+
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 36.
+LaTeX Font Info:    ... okay on input line 36.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 36.
+LaTeX Font Info:    ... okay on input line 36.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 36.
+LaTeX Font Info:    ... okay on input line 36.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 36.
+LaTeX Font Info:    ... okay on input line 36.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 36.
+LaTeX Font Info:    ... okay on input line 36.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 36.
+LaTeX Font Info:    ... okay on input line 36.
+LaTeX Font Info:    Try loading font information for T1+ptm on input line 36.
+
+(/usr/share/texmf/tex/latex/psnfss/t1ptm.fd
+File: t1ptm.fd 1998/07/06 Fontinst v1.800 font definitions for T1/ptm.
+)
+(/usr/share/texmf/tex/context/base/supp-pdf.tex
+(/usr/share/texmf/tex/context/base/supp-mis.tex
+loading : Context Support Macros / Missing
+\protectiondepth=\count100
+\scratchcounter=\count101
+\scratchdimen=\dimen115
+\scratchskip=\skip47
+\scratchmuskip=\muskip10
+\scratchbox=\box28
+\scratchread=\read1
+\scratchwrite=\write3
+\nextbox=\box29
+\nextdepth=\dimen116
+\everyline=\toks17
+\!!counta=\count102
+\!!countb=\count103
+\recursecounter=\count104
+)
+loading : Context Support Macros / PDF
+\nofMPsegments=\count105
+\nofMParguments=\count106
+)
+----------------------- Geometry parameters
+mode: a4paper pdftex 
+h-parts: 3cm, 455.24411pt, 2cm
+v-parts: 2cm, 731.23584pt, 2cm
+----------------------- Page layout dimensions
+\paperwidth  597.50787pt
+\paperheight 845.04684pt
+\textwidth  455.24411pt
+\textheight 664.23584pt
+\oddsidemargin  13.08827pt
+\evensidemargin 13.08827pt
+\topmargin  -15.36449pt
+\headheight 12.0pt
+\headsep    25.0pt
+\footskip   30.0pt
+\hoffset 0.0pt
+\voffset 0.0pt
+(1in=72.27pt, 1cm=28.45pt)
+-----------------------
+LaTeX Font Info:    Font shape `T1/ptm/bx/n' in size <17.28> not available
+(Font)              Font shape `T1/ptm/b/n' tried instead on input line 44.
+LaTeX Font Info:    External font `cmex10' loaded for size
+(Font)              <17.28> on input line 44.
+LaTeX Font Info:    External font `cmex10' loaded for size
+(Font)              <12> on input line 44.
+
+Underfull \hbox (badness 10000) in paragraph at lines 40--45
+
+ []
+
+LaTeX Font Info:    Font shape `T1/ptm/bx/n' in size <20.74> not available
+(Font)              Font shape `T1/ptm/b/n' tried instead on input line 49.
+[1
+
+[/usr/share/texmf/dvips/config/pdftex.map]]
+Underfull \hbox (badness 10000) in paragraph at lines 60--65
+
+ []
+
+
+Overfull \hbox (20.90804pt too wide) in paragraph at lines 73--79
+[]  $[]$ 
+ []
+
+[1]
+LaTeX Font Info:    Font shape `T1/ptm/bx/n' in size <10.95> not available
+(Font)              Font shape `T1/ptm/b/n' tried instead on input line 89.
+ [1] (pic.toc
+LaTeX Font Info:    Font shape `T1/ptm/bx/n' in size <12> not available
+(Font)              Font shape `T1/ptm/b/n' tried instead on input line 2.
+LaTeX Font Info:    External font `cmex10' loaded for size
+(Font)              <8> on input line 5.
+LaTeX Font Info:    External font `cmex10' loaded for size
+(Font)              <6> on input line 5.
+)
+\tf@toc=\write4
+\openout4 = `pic.toc'.
+
+ [2] (pic.lof)
+\tf@lof=\write5
+\openout5 = `pic.lof'.
+
+ [3] (pic.lot)
+\tf@lot=\write6
+\openout6 = `pic.lot'.
+
+ [4]
+LaTeX Font Info:    Try loading font information for OMS+ptm on input line 126.
+
+
+(/usr/share/texmf/tex/latex/psnfss/omsptm.fd
+File: omsptm.fd 
+)
+LaTeX Font Info:    Font shape `OMS/ptm/m/n' in size <12> not available
+(Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 126.
+ [5]
+LaTeX Font Info:    Font shape `T1/ptm/bx/n' in size <14.4> not available
+(Font)              Font shape `T1/ptm/b/n' tried instead on input line 136.
+ [6]
+Overfull \hbox (19.96172pt too wide) in paragraph at lines 165--166
+[]\T1/ptm/m/n/12 O ser-vi-dor kMail, com os da-dos recém-recebidos, os per-fis 
+de usuá-ri-os e o meta-conhecimento
+ []
+
+[7] <webcadetrule.png 300.88408pt, 205.96948pt, obj 43>
+File: webcadetrule.png Graphic file (type png)
+ <use webcadetrule.png>
+[8 <./webcadetrule.png>] [9]
+<corbarequisicaoacionamento.png 341.35527pt, 201.3924pt, obj 57>
+File: corbarequisicaoacionamento.png Graphic file (type png)
+
+<use corbarequisicaoacionamento.png>
+<corbainterfaceorb.png 341.35527pt, 200.42879pt, obj 58>
+File: corbainterfaceorb.png Graphic file (type png)
+
+<use corbainterfaceorb.png> [10] [11 <./corbarequisicaoacionamento.png> <./corb
+ainterfaceorb.png>] [12]
+
+LaTeX Warning: Citation `leite:1997' on page 13 undefined on input line 337.
+
+[13] <descricaopadrao.png 254.14949pt, 362.55449pt, obj 84>
+File: descricaopadrao.png Graphic file (type png)
+
+<use descricaopadrao.png> <arvoredecisao.png 351.9549pt, 336.05548pt, obj 85>
+File: arvoredecisao.png Graphic file (type png)
+
+<use arvoredecisao.png> [14 <./descricaopadrao.png>] [15 <./arvoredecisao.png>]
+
+LaTeX Warning: Citation `schoman:1997' on page 16 undefined on input line 388.
+
+
+LaTeX Warning: Citation `mullery:1979' on page 16 undefined on input line 388.
+
+
+LaTeX Warning: Citation `finkelstein:1990' on page 16 undefined on input line 3
+90.
+
+
+LaTeX Warning: Citation `leite:1989' on page 16 undefined on input line 390.
+
+
+LaTeX Warning: Citation `fickas:1991' on page 16 undefined on input line 390.
+
+[16] [17] <dan2000.png 373.15408pt, 186.45659pt, obj 113>
+File: dan2000.png Graphic file (type png)
+ <use dan2000.png>
+[18 <./dan2000.png>] [19]
+LaTeX Font Info:    External font `cmex10' loaded for size
+(Font)              <7> on input line 476.
+LaTeX Font Info:    External font `cmex10' loaded for size
+(Font)              <5> on input line 476.
+ [20]
+LaTeX Font Info:    Try loading font information for T1+pcr on input line 488.
+ (/usr/share/texmf/tex/latex/psnfss/t1pcr.fd
+File: t1pcr.fd 1998/07/06 Fontinst v1.800 font definitions for T1/pcr.
+)
+[21] [22]
+Warning: pdflatex (file relacionamento.png): can't handle alpha channel correct
+ly, stripped (please report bugs to pdftex@tug.org)
+<relacionamento.png 99.25078pt, 2.64989pt, obj 139>
+File: relacionamento.png Graphic file (type png)
+ <use relacionamento.png>
+Warning: pdflatex (file relacionamentoparalelo.png): can't handle alpha channel
+ correctly, stripped (please report bugs to pdftex@tug.org)
+<relacionamentoparalelo.png 99.25078pt, 3.13168pt, obj 140>
+File: relacionamentoparalelo.png Graphic file (type png)
+
+<use relacionamentoparalelo.png> <atorexclusivo.png 90.81929pt, 113.70479pt,
+obj 141>
+File: atorexclusivo.png Graphic file (type png)
+ <use atorexclusivo.png> <atorparalelo.png 90.81929pt, 113.94568pt,
+obj 142>
+File: atorparalelo.png Graphic file (type png)
+ <use atorparalelo.png> <atordistribuido.png 90.81929pt, 113.70479pt,
+obj 143>
+File: atordistribuido.png Graphic file (type png)
+ <use atordistribuido.png>
+<atorparalelodistribuido.png 90.81929pt, 113.94568pt, obj 144>
+File: atorparalelodistribuido.png Graphic file (type png)
+
+<use atorparalelodistribuido.png>
+<casousosequencial.png 99.49168pt, 45.53009pt, obj 145>
+File: casousosequencial.png Graphic file (type png)
+
+<use casousosequencial.png> <casousodistribuido.png 99.49168pt, 45.53009pt,
+obj 146>
+File: casousodistribuido.png Graphic file (type png)
+ <use casousodistribuido.png> [23 <./relacionamento.png> <./relacionamentoparal
+elo.png> <./atorexclusivo.png> <./atorparalelo.png> <./atordistribuido.png> <./
+atorparalelodistribuido.png> <./casousosequencial.png> <./casousodistribuido.pn
+g>]
+LaTeX Font Info:    External font `cmex10' loaded for size
+(Font)              <10.95> on input line 602.
+
+Underfull \hbox (badness 10000) in paragraph at lines 610--610
+[]| \T1/ptm/m/n/10.95 Pa-drões na
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 610--610
+\T1/ptm/m/n/10.95 Cons-tru-ção de
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 614--614
+[]| \T1/ptm/m/n/10.95 Uti-li-za-ção
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 614--614
+\T1/ptm/m/n/10.95 de di-fe-ren-
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 614--614
+\T1/ptm/m/n/10.95 tes mei-os de
+ []
+
+[24] [25]
+
+LaTeX Warning: Citation `eyanaga:1997' on page 26 undefined on input line 650.
+
+<veryhot1.png 455.30098pt, 542.98859pt, obj 192>
+File: veryhot1.png Graphic file (type png)
+ <use veryhot1.png>
+<veryhot2.png 455.30098pt, 277.99858pt, obj 193>
+File: veryhot2.png Graphic file (type png)
+ <use veryhot2.png> [26]
+[27 <./veryhot1.png>] <microkernel.png 469.51408pt, 507.33539pt, obj 208>
+File: microkernel.png Graphic file (type png)
+
+<use microkernel.png>
+Overfull \hbox (14.26883pt too wide) in paragraph at lines 701--702
+ [][] 
+ []
+
+[28 <./veryhot2.png>] [29 <./microkernel.png>]
+<arquitetura.png 469.51408pt, 198.01979pt, obj 230>
+File: arquitetura.png Graphic file (type png)
+ <use arquitetura.png>
+Overfull \hbox (14.26883pt too wide) in paragraph at lines 724--725
+ [][] 
+ []
+
+<componentes.png 633.86812pt, 334.24875pt, obj 231>
+File: componentes.png Graphic file (type png)
+ <use componentes.png>
+Overfull \hbox (178.62247pt too wide) in paragraph at lines 736--737
+ [][] 
+ []
+
+[30 <./arquitetura.png>] [31 <./componentes.png>]
+<coolcase.png 398.20769pt, 300.16138pt, obj 250>
+File: coolcase.png Graphic file (type png)
+ <use coolcase.png>
+<prototipo.png 341.35527pt, 226.2051pt, obj 251>
+File: prototipo.png Graphic file (type png)
+ <use prototipo.png> [32 <./coolcase.png>] [33 <./prototipo.png>]
+
+LaTeX Warning: Citation `wooldridge:2000' undefined on input line 808.
+
+(pic.bbl [34] [35]) [36] (pic.aux)
+
+LaTeX Warning: There were undefined references.
+
+ ) 
+Here is how much of TeX's memory you used:
+ 2093 strings out of 10610
+ 25531 string characters out of 67315
+ 77073 words of memory out of 263001
+ 5014 multiletter control sequences out of 10000+0
+ 44996 words of font info for 57 fonts, out of 400000 for 1000
+ 16 hyphenation exceptions out of 1000
+ 25i,9n,24p,1953b,284s stack positions out of 300i,100n,500p,50000b,4000s
+<8r.enc><cmr8.pfb><cmmi8.pfb><cmsy10.pfb><cmmi12.pfb>
+Output written on pic.pdf (38 pages, 1232574 bytes).

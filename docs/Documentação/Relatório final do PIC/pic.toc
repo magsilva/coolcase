@@ -1,0 +1,48 @@
+\select@language {brazil}
+\contentsline {section}{\numberline {1}Introdu\c c\~ao}{6}
+\contentsline {section}{\numberline {2}Objetivos}{7}
+\contentsline {section}{\numberline {3}Materiais e m\'etodos}{8}
+\contentsline {subsection}{\numberline {3.1}Processo de Desenvolvimento de Software}{8}
+\contentsline {subsection}{\numberline {3.2}Metodologia de Desenvolvimento Baseada em Objetos Distribu\IeC {\'\i }dos Inteligentes}{8}
+\contentsline {subsection}{\numberline {3.3}Reposit\'orios}{8}
+\contentsline {subsubsection}{\numberline {3.3.1}kMail}{8}
+\contentsline {subsubsection}{\numberline {3.3.2}WebCADET}{9}
+\contentsline {subsubsection}{\numberline {3.3.3}Reposit\'orio de Projetos do NIST}{11}
+\contentsline {subsubsection}{\numberline {3.3.4}Osirix}{12}
+\contentsline {subsection}{\numberline {3.4}CORBA}{13}
+\contentsline {subsection}{\numberline {3.5}Engenharia de requisito}{14}
+\contentsline {subsubsection}{\numberline {3.5.1}Uma breve introdu\c c\~ao}{14}
+\contentsline {subsubsection}{\numberline {3.5.2}Problemas encontrados durante o processo de engenharia de requisitos}{15}
+\contentsline {subsection}{\numberline {3.6}T\'ecnicas aplic\'aveis no processo de engenharia de requisitos}{17}
+\contentsline {subsubsection}{\numberline {3.6.1}Uso de padr\~oes na constru\c c\~ao de cen\'arios}{17}
+\contentsline {subsubsection}{\numberline {3.6.2}Identifica\c c\~ao de Padr\~oes de Reutiliza\c c\~ao de Requisitos de Sistemas de Informa\c c\~ao}{20}
+\contentsline {subsubsection}{\numberline {3.6.3}Pontos de vista}{21}
+\contentsline {subsubsection}{\numberline {3.6.4}Viewpoint framework}{22}
+\contentsline {subsubsection}{\numberline {3.6.5}Viewpoins Oriented Requirements Definition}{24}
+\contentsline {subsubsection}{\numberline {3.6.6}Process and Requirements Engineering Viewpoints - Preview}{26}
+\contentsline {subsubsection}{\numberline {3.6.7}REQAV: Modelo para Descri\c c\~ao, Qualifica\c c\~ao, An\'alise e Valida\c c\~ao de Requisitos}{28}
+\contentsline {subsubsection}{\numberline {3.6.8}Usando diferentes meios de comunica\c c\~ao na negocia\c c\~ao de requisitos}{28}
+\contentsline {subsection}{\numberline {3.7}Formatos para interc\^ambio de modelos}{30}
+\contentsline {subsection}{\numberline {3.8}Persist\^encia utilizando banco de dados}{32}
+\contentsline {subsection}{\numberline {3.9}Extens\~ao da linguagem UML}{33}
+\contentsline {section}{\numberline {4}Resultados e Discuss\~ao}{35}
+\contentsline {subsection}{\numberline {4.1}An\'alise das diversas t\'ecnicas e m\'etodos de engenharia de requisitos estudadas}{35}
+\contentsline {subsection}{\numberline {4.2}Estudo sobre caracter\IeC {\'\i }sticas de sistemas gerenciadores de conhecimento}{36}
+\contentsline {subsection}{\numberline {4.3}Ferramenta}{37}
+\contentsline {subsubsection}{\numberline {4.3.1}Framework veryhot}{37}
+\contentsline {subsubsection}{\numberline {4.3.2}Kernel}{39}
+\contentsline {subsubsection}{\numberline {4.3.3}Arquitetura}{40}
+\contentsline {subsubsection}{\numberline {4.3.4}Componentes do sistema}{40}
+\contentsline {paragraph}{Entity}{41}
+\contentsline {paragraph}{Requirements}{41}
+\contentsline {paragraph}{Use Case e Ator}{41}
+\contentsline {paragraph}{Use Case Model}{42}
+\contentsline {paragraph}{View}{43}
+\contentsline {paragraph}{Template}{43}
+\contentsline {paragraph}{Knowledge}{43}
+\contentsline {subsubsection}{\numberline {4.3.5}CoolCase}{43}
+\contentsline {subsection}{\numberline {4.4}M\'etodo de Engenharia de Requisitos Proposto}{43}
+\contentsline {subsubsection}{\numberline {4.4.1}Captura inicial de dados}{45}
+\contentsline {subsubsection}{\numberline {4.4.2}An\'alise}{45}
+\contentsline {section}{\numberline {5}Conclus\~ao}{46}
+\contentsline {section}{\hbox to\@tempdima {6\hfil }Bibliografia}{47}

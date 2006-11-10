@@ -1,0 +1,20 @@
+\subsubsection{Instalação e configuração do PostgreSQL}
+
+Este banco de dados está disponível em praticamente todas as distribuições Linux atuais: Conectiva, Red Hat, Mandrake, Debian, SuSE. Durante todo este projeto, utilizou-se o Conectiva 6.0 (até o primeiro semestre de 2001) e Conectiva 7.0 (a partir do segundo semestre de 2001).
+
+Primeiramente, é necessário estar registrado ("logado") no sistema como o usuário \textbf{root}. A seguir, dando início à instalação do PostgreSQL através do apt-get, execute o comando \textbf{apt-get install postgresql}. Todos os pacotes necessários vão ser pegos do repositório de pacotes RPM utilizado pelo apt e instalados automaticamente. Agora falta apenas configurar o PostgreSQL para receber coneções TCP/IP. Isto é essencial tendo em vista que os drivers JDBC utilizam-se deste protocolo para se conectarem aos bancos de dados. Edite o arquivo \textbf{/var/lib/pgsql/data/postgresql.conf} e altere a linha \textbf{tcpip_socket = false} para \textbf{tcpip_socket = on }. Inicie o banco de dados através do comando \textbf{/etc/init.d/postgresql start}. Se não ocorreu nenhum problema, o postgresql deve estar funcionando, aceitando conexões TCP na porta 5432.
+
+Continuando a configuração, crie a base de dados (também chamada no PostgreSQL de \textit{catalog}). Primeiro, criemos um usuário específico para a CoolCase:
+
+\tiny
+\begin{verbatim}
+	su - postgres
+	createdb test
+	psql test
+	create user coolcase createdb with password 'coolcase'
+	create database coolcase
+	grant all on coolcase to coolcase
+\end{verbatim}
+
+
+

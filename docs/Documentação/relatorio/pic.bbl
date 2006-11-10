@@ -1,0 +1,160 @@
+\begin{thebibliography}{}\setlength{\rightskip}{0pt plus 2cm}
+\newcommand\C[1]{\c#1}\newcommand{\Capitalize}[1]{\uppercase{#1}}
+\newcommand{\capitalize}[1]{\expandafter\Capitalize#1}
+
+\bibitem[BORTOLI, 2000, p. 1--12]{bor:2000}
+BORTOLI, L.~A.; PRICE, A.~M.
+\newblock Um método para auxiliar a definição de requisitos.
+\newblock In:  . Cancun-México: IDEAS 2000: Jornada Ibero Americana de
+  Ingeneria de Requisitos Y Ambientes de Software, 2000. p. 1--12.
+
+\bibitem[BOSAK, 1998]{xml:1998}
+BOSAK, J. et al.
+\newblock {\bf Extensible Markup Language (XML) 1.0}.
+\newblock First ed. [S.l.], February 1998.
+
+\bibitem[CALDWELL, 2000]{webcadet:2000}
+CALDWELL, N. H.~M. et al.
+\newblock Web-based knowledge managment for distributed design.
+\newblock {\bf IEEE Intelligent Systems}, p. 40--47, May/June 2000.
+
+\bibitem[DíAS, 1999]{diaz:1999}
+DíAS, I.; METTEO, A.
+\newblock Objectory process stereotypes.
+\newblock {\bf JOOP}, p. 29--38, June 1999.
+
+\bibitem[DIAZ, 2000, p. 145--154]{dia:2000}
+DIAZ, J.~S.; FERRAGUD, V.~P.; PELOZO, E.~I.
+\newblock Un entorno de generation de protótipo de interfaces de usuário a
+  partir de diagramas de interacción.
+\newblock In:  . Cancun-México: IDEAS 2000: Jornada Ibero Americana de
+  Ingeneria de Requisitos Y Ambientes de Software, 2000. p. 145--154.
+
+\bibitem[FOWLER, 1997]{fowler:1997}
+FOWLER, M.; SCOTT, K. {\bf UML Distilled: Applying the Standard Object Modeling
+  Language}. [S.l.]: Addison Wesley, 1997.
+
+\bibitem[FOWLER, 2000]{fowler:2000}
+FOWLER, M. {\bf UML distilled: a brief guide to the standard object modeling
+  language}. Second ed. [S.l.]: Addison Wesley Longman, 2000.  (Object
+  Technology).
+
+\bibitem[GRAVENA, 2000]{gravena:2000}
+GRAVENA, J.~P.
+\newblock Aspectos importatnes de uma metodologia para desenvolvimento de
+  software com objetos distribuídos.
+\newblock 2000.
+
+\bibitem[HAHN, 1999]{hahn:2000}
+HAHN, J.; KIM, J.
+\newblock Why are some diagrams easier to work with? effects of diagrammatic
+  representation on the cognitive integration process of system analysis and
+  design.
+\newblock {\bf ACM Transations on Computer-Human Interaction}, v.~6, n.~3, p.
+  181--213, September 1999.
+
+\bibitem[HUZITA, 1995]{huzita:1995}
+HUZITA, E. H.~M.
+\newblock Uma metodologia para auxiliar o desenvolvimento de aplicações para
+  processamento paralelo.
+\newblock 1995.
+
+\bibitem[JACOBSON, 1999]{jacobson:2001}
+JACOBSON, I.; BOOCH, G.; RUMBAUGH, J. {\bf The Unified Software Development
+  Process}. Second ed. Massachusetts: Addison Wesley Longman, 1999.  (Object
+  Tecnology).
+
+\bibitem[KNAPIK, 1998]{knapik:1998}
+KNAPIK, M.; JOHNSON, J. {\bf Developing Intelligent Agents for Distributed
+  System: Exploring Architecture, Technologies and Applications}. EUA: McGraw
+  Hill, 1998.
+
+\bibitem[LEITE, 1997]{leite:1998}
+LEITE, J.
+\newblock Enhacing a requirements baseline with scenarios.
+\newblock {\bf Requirements Engineering Journal}, v.~2, n.~4, 1997.
+
+\bibitem[O'LEARY, 1998]{leary:1998}
+O'LEARY, D.~E.
+\newblock Using ai in knowledge managment: Knowldege bases and ontologies.
+\newblock {\bf IEEE Intelligent Systems}, v.~13, n.~3, p. 34--39, may/june
+  1998.
+
+\bibitem[PFAFFENSELLER, 2001]{pfaffenseller:2000}
+PFAFFENSELLER, M.; PFAFFENSELLER, M.; KROTH, E.
+\newblock Uma ferramenta de apoio ao gerenciamento de componentes.
+\newblock 2001.
+
+\bibitem[RABARIJAONA, 2000]{osiris:2000}
+RABARIJAONA, A. et al.
+\newblock Building and searching an xml-based corporate memory.
+\newblock {\bf IEEE Intelligent Systems}, p. 56--63, May/June 2000.
+
+\bibitem[RIDAO, 2000, p. 140--157]{ridao:2000}
+RIDAO, M.; DOORN, J.; PRADO~LEITE, J. C.~S. do.
+\newblock Uso de patrones en la construcción de escenarios.
+\newblock In:  . [S.l.]: WER, 2000. p. 140--157.
+
+\bibitem[SATO, 1994, p. 167--183]{sato:1994}
+SATO et al.
+\newblock Onix: An environment for the development of parallel object oriented
+  software.
+\newblock In:  {\bf Internacional Workshop on High Performance Computing}. São
+  Paulo: [s.n.], 1994. p. 167--183.
+
+\bibitem[SCHELEBBE, 1995]{schelebbe:1995}
+SCHELEBBE, H.
+\newblock {\bf Distributed PROSOFT}.
+\newblock Germany, 1995.
+
+\bibitem[SCHWARTZ, 2000]{kmail:2000}
+SCHWARTZ, D.~G.; TE'ENI, D.
+\newblock Tying knowledge to action with kmail.
+\newblock {\bf IEEE Intelligent Systems}, p. 33--39, May/June 2000.
+
+\bibitem[SOMMERVILLE, 1996]{sommerville:1996}
+SOMMERVILLE, I. {\bf Software Engineering}. Fifth ed. Massachussets: Addison
+  Wesley, 1996.  (International Computer Science).
+
+\bibitem[SOMMERVILLE, 1997]{sommerville:1997}
+SOMMERVILLE, I.; SAWYER, P.
+\newblock Viewpoints: principles, problems and a pratical approach to
+  requirements engineering.
+\newblock 1997.
+
+\bibitem[SOUZA, 1998, p. 205--220]{souza:1998}
+SOUZA, C.~T.; OLIVEIRA, M. Ábaco.
+\newblock Um ambiente de desenvolvimento baseado em objetos distribuídos
+  configuráveis.
+\newblock In:  {\bf XII Simpósio Brasileira de Engenharia de Software}.
+  Maringá-PR: [s.n.], 1998. p. 205--220.
+
+\bibitem[ST-DENIS, 2000]{spool:2000}
+ST-DENIS, G.; SCHAUER, R.; KELLER, R.~K.
+\newblock Selecting a model interchange format.
+\newblock In:  IEEE (Ed.). [S.l.: s.n.], 2000.
+
+\bibitem[SZYKMAN, 2000]{nist:2000}
+SZYKMAN, S. et al.
+\newblock Design repositories: Engineering design's new knowledge base.
+\newblock {\bf IEEE Intelligent Systems}, p. 48--55, May/June 2000.
+
+\bibitem[TORO, 2000]{cortes:2000}
+TORO, A.~D. et al.
+\newblock Identificación de patrones de reutilización de requisitos de sistemas
+  de información.
+\newblock In:  . [S.l.]: WER, 2000.
+
+\bibitem[WOOLDRIDGE, 1999]{wooldridge:1999}
+WOOLDRIDGE, M.~J.; JENNINGS, N.~R.
+\newblock Software engineering with agents: Pitfalls and pratifalls.
+\newblock {\bf IEEE Internet Computing}, v.~3, n.~3, p. 20--27, may-jun 1999.
+
+\bibitem[ZANLORENCI, 2000, p. 61--72]{zanlorenci:2000}
+ZANLORENCI, E.~P.; BURNETT, R.~C.
+\newblock Reqav: Modelo para descrição, qualificação, análise e validação de
+  requisitos.
+\newblock In:  {\bf IDEAS2000: Jornada Ibero Americana de Ingeneria de
+  Requisitos Y Ambientes de Software}. [S.l.: s.n.], 2000. p. 61--72.
+
+\end{thebibliography}

@@ -1,0 +1,86 @@
+#LyX 1.1 created this file. For more info see http://www.lyx.org/
+\lyxformat 2.16
+\textclass article
+\language default
+\inputencoding latin1
+\fontscheme default
+\graphics default
+\paperfontsize default
+\spacing single 
+\papersize Default
+\paperpackage a4
+\use_geometry 0
+\use_amsmath 0
+\paperorientation portrait
+\secnumdepth 3
+\tocdepth 3
+\paragraph_separation indent
+\defskip medskip
+\quotes_language english
+\quotes_times 2
+\papercolumns 1
+\papersides 1
+\paperpagestyle default
+
+\layout Title
+
+UML - uma visão acadêmica
+\layout Author
+
+Marco Aurélio Graciotto Silva
+\layout Section
+
+Introdução
+\layout Standard
+
+Durante anos presenciamos, na computação, a criação de milhares de linguagens
+ de programação, esquecendo que o processo de criação de um software envolve
+ muitas etapas, sendo que estas não podem ser adequadamente atendidas por
+ tais linguagens.
+ Os poucos formalismos que surgiram até então eram muito complexos e difícies,
+ o que impediu sua ampla utilização.
+ Gastar mais tempo projetando do que codificando era algo que os programadores
+ não aceitavam (e ainda não aceitam).
+\layout Standard
+
+Nas décadas de 80 e 90, com a maior divulgação e utilização de técnicas
+ estruturadas e orientadas a objeto, começa a haver um consenso sobre como
+ deveria ser a linguagem ideal para modelar os sistemas.
+ Talvez a mudança mais importante tenha sido o abondono da linguagem escrita,
+ rumando para a gráfica, muito mais fácil e, principalmente, rápida para
+ ler e compreender.
+\layout Standard
+
+Na década de 90, enfim, surge o passo culminante que veio a criar um novo
+ padrão.
+ James Rumbaugh, Ivar Jacobson e Grady Booch (los trez amigos), contratados
+ pela Rational, criaram a UML - Unified Modeling Language.
+ Era a união das melhores práticas e técnicas desenvolvidas até então, resultand
+o em um produto muitissimo agradável e razoavelmente completo.
+ O endorso pela OMG (Object Manangment Group), um grupo de centenas de empresas
+ (excluindo a Microsoft, todas as outras mais conhecidas), que adotou a
+ UML como peça fundamental do seu OMA (Object Managment Architecture), combinada
+ com a íncrivel visão da Rational, que tornou o padrão aberto, resultou
+ na mais bem sucedida linguagem para modelar sistemas até então desenvolvidas.
+\layout Section
+
+Fundamentos
+\layout Standard
+
+\layout Section
+
+Conclusão
+\layout Standard
+
+Atualmente.
+ a UML está na versão 1.3.
+ A 1.4 deve estar pronta em meados de 2001 e em 2002 provavelmente teremos
+ a versão 2.0.
+ A mudança mais importante que veremos com última provavelmente será a adoção
+ de um formato padrão para intercâmbio de modelos criados com UML.
+ Atualmente temos a XMI (eXchange Modeling Information) que, infelizmente,
+ esbarra em problemas as vezes tão banais quanto DTDs incompatíveis.
+ O certo é o que o formato será compatível com XML, mas, no entanto, talvez
+ o XMI não passe de uma experiência mal sucedida que, provavlemente, culminará
+ em uma solução comum com a UML 2.0.
+\the_end

@@ -1,0 +1,32 @@
+\documentclass[a4paper,12pt]{article}
+\author{Marco Aurélio Graciotto Silva}
+\title{Common Object Request Broker Arquitecture}
+\usepackage[brazil]{babel}
+
+\begin{document}
+
+\maketitle
+\tableofcontents
+
+\section{Introdução}
+
+as
+
+\section{CORBA}
+
+Um sistema distribuído consiste em vários componentes, localizados em computadores ligados por uma rede, que se comunicam e coordenam através de passagem de mensagens. Disto deriva-se várias características: concorrência de componentes, ausência de uma hora global (dificultando a sincronização) e falhas dos componentes. E um sistema deste tipo precisa atender características tais como segurança, independência de escala, abertura, heterogeniedade dos componentes, transparência. Construir um sistema com tamanha capacidade é, obviamente, uma tarefa difícil. A fim de tornar tal tarefa menos difícil, várias tecnologias foram desenvolvidas: CORBA, RMI, Jini, DCOM, SOAP. Destas, a única solução aberta, testada, com implementações gratuitas, capaz de funcionar em ambientes heterogêneos, é o CORBA.
+
+O Common Object Request Broker Arquitecture (CORBA) foi criado pela Object Management Group (OMG), uma organização internacional com mais de 800 membros (empresas, engenheiros de software e usuários). Seu objetivo é servir como plataforma para a construção de sistemas distribuídos baseados em objetos ao mesmo tempo que possibilita a utilização de software legado no sistema. Sua arquitetura compõe-se de quatro componentes:
+\begin{itemize}
+\item Object Request Broker (ORB): permite a comunicação transparente entre os objetos no sistema disbribuído
+\item Object Service: provêem serviços de baixo nível, tal como localização, persistência.
+\item Common Facility: são ferramentas que permitem a construção de sistemas num domínio específico.
+\item Application Object: são as aplicações existentes no sistema distribuído, geralmente feitas com auxílio dos serviços e facilidades CORBA.
+\end{itemize}
+
+\subsection{ORB}
+
+O ORB provê meios para que requisições e respostas sejam feitas pelos objetos de maneira transparente, provendo assim interoperabilidade entre aplicações em diferentes máquinas em sistemas distribuídos heterogêneos.
+
+
+\end{document}

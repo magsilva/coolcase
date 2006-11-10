@@ -1,0 +1,25 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
+
+<HTML>
+
+<HEAD>
+	<TITLE>IR</TITLE>
+	<LINK REV="Made" HREF="mailto:magsilva@din.uem.br">
+	<META NAME="Author" CONTENT="Marco Aurélio Graciotto Silva">
+	<META NAME="Generator" CONTENT="NoteTab Light 4.84 HTML4-strict.clb">
+</HEAD>
+
+<BODY>
+
+<h1>Interface Repository - IFR</h1>
+
+<P>A interface de um objeto, definida através da IDL, é vital para no CORBA. No entanto surgem algumas questões. Quando o software é estático, com tudo definido em interfaces desde o início, nós sabemos tudo que os objetos podem fazer, o que facilita o "trabalho" do objeto quando for se comunicar com outros. Mas e quando isso não é possível? Por exemplo, nós acrescentamos um objeto desconhecido na rede? Como podemos nos utilizar dele?</P>
+
+<P>A solução é o depósito de interfaces. Ele permite que objetos persistentes representem a interface deles em tempo de execução, permitindo que os outros objetos do sistema identifiquem sua interface, as mensagens que pode receber e, enfim, enviar mensagens, através do Dynamic Invocation Interface.</P>
+
+<P>O DII (Dynamic Invocation Interface) é uma maneira indireta de enviar mensagens para os objetos. O objeto que quer enviar a mensagem fornece o "remetente", a operação a ser executada e seus parâmetros. Estas informações sobre (operação, parâmetros) é que tornam necessário o IFR. Análogo ao DII, temos o DSI (Dynamic Skeleton Interface). Este pega os dados recebidos e constroí a requisição para o objeto. É a parte restante do caminho necessária.
+
+<P>Além disso, pode-se armazenar no depósito de interfaces dados sobre depuração, bibliotecas de stubs ou skeletons, rotinas para formatar ou navegar por certos tipos de objetos associados com o IFR.</P>
+
+</BODY>
+</HTML>

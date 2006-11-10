@@ -1,0 +1,262 @@
+\begin{thebibliography}{}\setlength{\rightskip}{0pt plus 2cm}
+\newcommand{\C}[1]{\c#1}\newcommand{\I}{I}\newcommand{\Capitalize}[1]{\upperca%
+se{#1}}
+\newcommand{\capitalize}[1]{\expandafter\Capitalize#1}
+
+\bibitem[{Balzer}{BALZER}{1991}]{balzer:1991}
+BALZER, R.
+\newblock Tolerating inconsistency.
+\newblock In:  {\bf 13th International Conference on Software Engineering}.
+  Austin, Texas, USA: IEEE Computer Society Press, 1991. p. 158--165.
+
+\bibitem[{Besnard e  Hunter}{BESNARD; HUNTER}{1995}]{besnard:1995}
+BESNARD, P.; HUNTER, A.
+\newblock Quasi-classical logic: Non-trivializable classical reasoning from
+  inconsistency information.
+\newblock {\bf Symbolic and Quantitative Approaches to Uncertainty}, 1995.
+
+\bibitem[{Bessani}{BESSANI}{2000}]{bessani:2000}
+BESSANI, A.~N.
+\newblock Relatório de Iniciação Científica.
+\newblock 2000.
+
+\bibitem[{Bortoli e  Price}{BORTOLI; PRICE}{2000}]{bor:2000}
+BORTOLI, L.~A.; PRICE, A.~M.
+\newblock Um método para auxiliar a definição de requisitos.
+\newblock In:  . Cancun-México: IDEAS 2000: Jornada Ibero Americana de
+  Ingeneria de Requisitos Y Ambientes de Software, 2000. p. 1--12.
+
+\bibitem[{Bosak e }{BOSAK; OTHERS}{1998}]{xml:1998}
+BOSAK, J. et al.
+\newblock {\bf Extensible Markup Language (XML) 1.0}.
+\newblock First ed. [S.l.], February 1998.
+
+\bibitem[{Caldwell}{CALDWELL}{2000}]{webcadet:2000}
+CALDWELL, N. H.~M. et al.
+\newblock Web-based knowledge managment for distributed design.
+\newblock {\bf IEEE Intelligent Systems}, p. 40--47, May/June 2000.
+
+\bibitem[{Damian}{DAMIAN}{2000}]{damian:2000}
+DAMIAN, D. E.~H. et al.
+\newblock Using different communication media in requirements negotiation.
+\newblock {\bf IEEE Software}, p. 28--36, May-June 2000.
+
+\bibitem[{Días e  Metteo}{DíAS; METTEO}{1999}]{diaz:1999}
+DíAS, I.; METTEO, A.
+\newblock Objectory process stereotypes.
+\newblock {\bf JOOP}, p. 29--38, June 1999.
+
+\bibitem[{Diaz, Ferragud e  Pelozo}{DIAZ; FERRAGUD; PELOZO}{2000}]{dia:2000}
+DIAZ, J.~S.; FERRAGUD, V.~P.; PELOZO, E.~I.
+\newblock Un entorno de generation de protótipo de interfaces de usuário a
+  partir de diagramas de interacción.
+\newblock In:  . Cancun-México: IDEAS 2000: Jornada Ibero Americana de
+  Ingeneria de Requisitos Y Ambientes de Software, 2000. p. 145--154.
+
+\bibitem[{Easterbrook e  Nuseibeh}{EASTERBROOK;
+  NUSEIBEH}{1995}]{easterbrook:1995}
+EASTERBROOK, S.; NUSEIBEH, B.
+\newblock Using viewpoints for inconsistency management.
+\newblock {\bf IEE Software Engineering Journal}, November 1995.
+
+\bibitem[{Fickas, Lamsweerde e  Dardenne}{FICKAS; LAMSWEERDE;
+  DARDENNE}{1991}]{fickas:1991}
+FICKAS, S.; LAMSWEERDE, A. van; DARDENNE, A.
+\newblock Goal-directed concept acquisition in requirements elicitation.
+\newblock In:  IEEE COMPUTER SOCIETY PRESS. {\bf 6th International Workshop on
+  Software Specification and Design}. Como, Italy: [s.n.], 1991. p. 14--21.
+
+\bibitem[{Finkelstein, Kramer e  Goedicke}{FINKELSTEIN; KRAMER;
+  GOEDICKE}{1990}]{finkelstein:1990}
+FINKELSTEIN, A.; KRAMER, J.; GOEDICKE, J.~K.
+\newblock Viewpoints oriented software specification.
+\newblock In:  IEEE COMPUTER SOCIETY. {\bf 3rd International Workshop on
+  Software Engineering and its Applications}. Toulouse, France: [s.n.], 1990.
+  p. 337--351.
+
+\bibitem[{Fowler e  Scott}{FOWLER; SCOTT}{1997}]{fowler:1997}
+FOWLER, M.; SCOTT, K. {\bf UML Distilled: Applying the Standard Object Modeling
+  Language}. [S.l.]: Addison Wesley, 1997.
+
+\bibitem[{Fowler}{FOWLER}{2000}]{fowler:2000}
+FOWLER, M. {\bf UML distilled: a brief guide to the standard object modeling
+  language}. Second ed. [S.l.]: Addison Wesley Longman, 2000.  (Object
+  Technology).
+
+\bibitem[{Gravena}{GRAVENA}{2000}]{gravena:2000}
+GRAVENA, J.~P.
+\newblock Aspectos importatnes de uma metodologia para desenvolvimento de
+  software com objetos distribuídos.
+\newblock Monografia final de curso.
+\newblock 2000.
+
+\bibitem[{Hahn e  Kim}{HAHN; KIM}{1999}]{hahn:2000}
+HAHN, J.; KIM, J.
+\newblock Why are some diagrams easier to work with? effects of diagrammatic
+  representation on the cognitive integration process of system analysis and
+  design.
+\newblock {\bf ACM Transations on Computer-Human Interaction}, v.~6, n.~3, p.
+  181--213, September 1999.
+
+\bibitem[{Huzita}{HUZITA}{1995}]{huzita:1995}
+HUZITA, E. H.~M.
+\newblock Uma metodologia para auxiliar o desenvolvimento de aplicações para
+  processamento paralelo.
+\newblock Tese de doutorado.
+\newblock Universidade de São Paulo.
+\newblock 1995.
+
+\bibitem[{Huzita}{HUZITA}{1999}]{huzita:1999}
+HUZITA, E. H.~M.
+\newblock Uma metodologia de desenvolvimento baseado em objetos distribuídos
+  inteligentes.
+\newblock Projeto de Pesquisa.
+\newblock 1999.
+
+\bibitem[{Jacobson, Booch e  Rumbaugh}{JACOBSON; BOOCH;
+  RUMBAUGH}{1999}]{jacobson:2001}
+JACOBSON, I.; BOOCH, G.; RUMBAUGH, J. {\bf The Unified Software Development
+  Process}. Second ed. Massachusetts: Addison Wesley Longman, 1999.  (Object
+  Tecnology).
+
+\bibitem[{Knapik e  Johnson}{KNAPIK; JOHNSON}{1998}]{knapik:1998}
+KNAPIK, M.; JOHNSON, J. {\bf Developing Intelligent Agents for Distributed
+  System: Exploring Architecture, Technologies and Applications}. EUA: McGraw
+  Hill, 1998.
+
+\bibitem[{Kotonya e  Sommerville}{KOTONYA; SOMMERVILLE}{1995}]{kotonya:1995}
+KOTONYA, G.; SOMMERVILLE, I.
+\newblock {\bf Requirements Engineering With Viewpoints}.
+\newblock Lancaster, LA1 4YR, UK, 1995.
+
+\bibitem[{Leite}{LEITE}{1997}]{leite:1997}
+LEITE, J.
+\newblock Enhacing a requirements baseline with scenarios.
+\newblock {\bf Requirements Engineering Journal}, v.~2, n.~4, 1997.
+
+\bibitem[{Leite}{LEITE}{1989}]{leite:1989}
+LEITE, J. C.~P.
+\newblock Viewpoint analysis: A case study.
+\newblock {\bf ACM J. Software Engineering Notes}, v.~14, n.~3, p. 111--119,
+  1989.
+
+\bibitem[{Macaulay}{MACAULAY}{1996}]{macaulay:1996}
+MACAULAY, L.~A. {\bf Requirements Engineering}. [S.l.: s.n.], 1996.
+
+\bibitem[{Mullery}{MULLERY}{1979}]{mullery:1979}
+MULLERY, G.~P.
+\newblock A method for controlled requirements specifications.
+\newblock In:  IEEE COMPUTER SOCIETY. {\bf 4th International Conference on
+  Software Engineering}. [S.l.: s.n.], 1979. p. 126--135.
+
+\bibitem[{Narayanaswamy e  Goldman}{NARAYANASWAMY;
+  GOLDMAN}{1992}]{narayanaswamy:1992}
+NARAYANASWAMY, K.; GOLDMAN, N.
+\newblock Lazy consistency: A basis for cooperative software development.
+\newblock In:  SIGOIS, A. S.~. (Ed.). {\bf International Conference on
+  Computer-Supported Cooperative Work}. Toronto, Ontario, Canada: [s.n.], 1992.
+  p. 257--264.
+
+\bibitem[{O'Leary}{O'LEARY}{1998}]{leary:1998}
+O'LEARY, D.~E.
+\newblock Using ai in knowledge managment: Knowldege bases and ontologies.
+\newblock {\bf IEEE Intelligent Systems}, v.~13, n.~3, p. 34--39, may/june
+  1998.
+
+\bibitem[{Pfaffenseller, Pfaffenseller e  Kroth}{PFAFFENSELLER; PFAFFENSELLER;
+  KROTH}{2001}]{pfaffenseller:2000}
+PFAFFENSELLER, M.; PFAFFENSELLER, M.; KROTH, E.
+\newblock Uma ferramenta de apoio ao gerenciamento de componentes.
+\newblock {\bf Workshop de Desenvolvimento Baseado em Componentes}, Junho 2001.
+
+\bibitem[{Rabarijaona}{RABARIJAONA}{2000}]{osirix:2000}
+RABARIJAONA, A. et al.
+\newblock Building and searching an xml-based corporate memory.
+\newblock {\bf IEEE Intelligent Systems}, p. 56--63, May/June 2000.
+
+\bibitem[{Ridao, Doorn e  Prado~Leite}{RIDAO; DOORN;
+  PRADO~LEITE}{2000}]{ridao:2000}
+RIDAO, M.; DOORN, J.; PRADO~LEITE, J. C.~S. do.
+\newblock Uso de patrones en la construcción de escenarios.
+\newblock In:  . [S.l.]: WER, 2000. p. 140--157.
+
+\bibitem[{Sato}{SATO}{1994}]{sato:1994}
+SATO et al.
+\newblock Onix: An environment for the development of parallel object oriented
+  software.
+\newblock In:  {\bf Internacional Workshop on High Performance Computing}. São
+  Paulo: [s.n.], 1994. p. 167--183.
+
+\bibitem[{Schelebbe}{SCHELEBBE}{1995}]{schelebbe:1995}
+SCHELEBBE, H.
+\newblock {\bf Distributed PROSOFT}.
+\newblock Germany, 1995.
+
+\bibitem[{Schoman e  Ross}{SCHOMAN; ROSS}{1977}]{schoman:1977}
+SCHOMAN, K.; ROSS, D.~T.
+\newblock Structured analysis for requirements definition.
+\newblock {\bf IEEE Transactions on Software Engineering}, v.~3, n.~1, p.
+  6--15, 1977.
+
+\bibitem[{Schwanke e  Kaiser}{SCHWANKE; KAISER}{1988}]{schwanke:1988}
+SCHWANKE, R.~W.; KAISER, G.~E.
+\newblock Living with inconsistency in large systems.
+\newblock In:  . Grassau, Germany: B. G. Teubner, Stuttgart, 1988. p. 98--118.
+
+\bibitem[{Schwartz e  Te'eni}{SCHWARTZ; TE'ENI}{2000}]{kmail:2000}
+SCHWARTZ, D.~G.; TE'ENI, D.
+\newblock Tying knowledge to action with kmail.
+\newblock {\bf IEEE Intelligent Systems}, p. 33--39, May/June 2000.
+
+\bibitem[{Sommerville}{SOMMERVILLE}{1996}]{sommerville:1996}
+SOMMERVILLE, I. {\bf Software Engineering}. Fifth ed. Massachussets: Addison
+  Wesley, 1996.  (International Computer Science).
+
+\bibitem[{Sommerville e  Sawyer}{SOMMERVILLE; SAWYER}{1997}]{sommerville:1997}
+SOMMERVILLE, I.; SAWYER, P.
+\newblock Viewpoints: principles, problems and a pratical approach to
+  requirements engineering.
+\newblock 1997.
+
+\bibitem[{Souza e  Oliveira}{SOUZA; OLIVEIRA}{1998}]{souza:1998}
+SOUZA, C.~T.; OLIVEIRA, M. Ábaco.
+\newblock Um ambiente de desenvolvimento baseado em objetos distribuídos
+  configuráveis.
+\newblock In:  {\bf XII Simpósio Brasileira de Engenharia de Software}.
+  Maringá-PR: [s.n.], 1998. p. 205--220.
+
+\bibitem[{St-Denis, Schauer e  Keller}{ST-DENIS; SCHAUER;
+  KELLER}{2000}]{spool:2000}
+ST-DENIS, G.; SCHAUER, R.; KELLER, R.~K.
+\newblock Selecting a model interchange format.
+\newblock In:  IEEE (Ed.). [S.l.: s.n.], 2000.
+
+\bibitem[{Szykman}{SZYKMAN}{2000}]{nist:2000}
+SZYKMAN, S. et al.
+\newblock Design repositories: Engineering design's new knowledge base.
+\newblock {\bf IEEE Intelligent Systems}, p. 48--55, May/June 2000.
+
+\bibitem[{Toro}{TORO}{2000}]{toro:2000}
+TORO, A.~D. et al.
+\newblock Identificación de patrones de reutilización de requisitos de sistemas
+  de información.
+\newblock In:  . [S.l.]: WER, 2000.
+
+\bibitem[{Wooldridge e  Jennings}{WOOLDRIDGE; JENNINGS}{1999}]{wooldridge:1999}
+WOOLDRIDGE, M.~J.; JENNINGS, N.~R.
+\newblock Software engineering with agents: Pitfalls and pratifalls.
+\newblock {\bf IEEE Internet Computing}, v.~3, n.~3, p. 20--27, may-jun 1999.
+
+\bibitem[{Yanaga}{YANAGA}{1997}]{eyanaga:1997}
+YANAGA, E.
+\newblock Relatório de Iniciação Científica.
+\newblock 1997.
+
+\bibitem[{Zanlorenci e  Burnett}{ZANLORENCI; BURNETT}{2000}]{zanlorenci:2000}
+ZANLORENCI, E.~P.; BURNETT, R.~C.
+\newblock Reqav: Modelo para descrição, qualificação, análise e validação de
+  requisitos.
+\newblock In:  {\bf IDEAS2000: Jornada Ibero Americana de Ingeneria de
+  Requisitos Y Ambientes de Software}. [S.l.: s.n.], 2000. p. 61--72.
+
+\end{thebibliography}

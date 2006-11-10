@@ -1,0 +1,17 @@
+A ferramenta deve auxiliar na análise e especificação de requisitos de um sistema distribuído. A própria ferramenta será um software distribuído, o que seria uma maneira de testar sua eficácia.
+
+Quais facilidades ela oferecerá? Além da modelagem dos cenários em UML, teremos uma organização dos dados a serem utilizados na análise de requisitos, com posterior geração de documentação de especificação do software. Mas necessita-se de um diferencial quanto aos sistemas distribuídos. Uma possibilidade seria ter um cenário de acordo com cada visão e, em um plano superior, unificar os mesmos. Isso facilitaria muito a análise de requisitos e visualização dos impactos dos diferentes casos de uso no sistema. Seria possível também prever problemas quanto ao paralelismo e concorrência, que poderiam passar desapercebidos em outros casos.Esse é um diferencial importantíssimo, já que teria uma grande influência na definição da arquitetura do software.
+
+Tendo mais ou menos elucidado o que o software fará, temos de decidir como o mesmo será feito. Esta é uma etapa que confunde muito. O melhor a fazer é dividir o que o sistema logo no início, lembrando de deixar espaço para expansões. A ferramenta em questão utiliza visões, precisa armazenar os diagramas e documentos gerados. Definemos então os seguintes sistemas independentes:
+- depósito de visões
+- depósito de pessoas
+- depósito de documentos
+- ferramenta que utiliza visões, gerando diagramas de caso de uso e documentação
+
+Uma visão sempre está relacionada com uma pessoa. Esta relação tem uma propriedade denominada ponto de vista. Uma mesma pessoa pode ter vários pontos de vista. Mas lembremos que devemos deixar espaços para expansões. Se ao invés de pessoas nós colocassemos algo mais abstrato e deste temos especializações tais como pessoas, agentes inteligente, etc? Seria interessante ter um agente inteligente fazendo análises constantes sobre conflitos que venham a existir entre os diagramas, para não citar exemplos mais complexos tais como inserção de visões automática baseado em outros sistemas previamente analizados. O grande problema deste é como identificar unicamente tal elemento?
+
+Chegamos então em outro aspecto a ser estudado. Uma pessoa, ao longo do tempo, evolui, regride. Mas as visões que ela faz não (a menos que ela explicitamente altere-as ou por motivos de força maior, tal como ascensão de cargo ;). Seria necessário armazenar com as visões o perfil da pessoa no momento de criação da visão. Isso teria um impacto grande no sistema, mas teria uma grande valia.
+
+Como pode ser notado, temos uma base de dados grande em mãos, que torna inviável a ferramenta analisar todas as visões. Uma melhor solução seria termos um depósito de visões inteligente, que permitiria a extração de visões baseada em critérios definidos pela ferramenta.
+
+Finalmente, temos o depósito de documentos. Um documento consisteria em um snapshot dos diagramas de casos de uso do sistema, junto com um documento descritivo. O documento poderia ser PostScript ou TeX ;). O snapshot seria compactado. Este gerenciador de documentos, inclusive, poderia estar armazenado a nível de sistema de arquivo ao invés de utilizar-se de um banco de dados.

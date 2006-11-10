@@ -1,0 +1,25 @@
+\select@language {brazil}
+\contentsline {figure}{\numberline {1}{\ignorespaces Exemplo de regra do Webcadet.}}{8}
+\contentsline {figure}{\numberline {2}{\ignorespaces Mecanismos para requisi\c c\~ao e acionamento de objetos}}{11}
+\contentsline {figure}{\numberline {3}{\ignorespaces Interfaces do Object Request Broker}}{11}
+\contentsline {figure}{\numberline {4}{\ignorespaces Descri\c c\~ao do padr\~ao Negocia\c c\~ao Terminada com Produ\c c\~ao.}}{14}
+\contentsline {figure}{\numberline {5}{\ignorespaces \'Arvore de decis\~ao para a sele\c c\~ao de padr\~oes.}}{15}
+\contentsline {figure}{\numberline {6}{\ignorespaces Cinco configura\c c\~oes de grupo: (a) cara a cara e (b) distribu\IeC {\'\i }da.}}{18}
+\contentsline {figure}{\numberline {7}{\ignorespaces Representa\c c\~ao dos relacionamentos}}{23}
+\contentsline {subfigure}{\string \numberline {7(a)}{\ignorespaces Relacionamento entre casos de uso}}{23}
+\contentsline {subfigure}{\string \numberline {7(b)}{\ignorespaces Relacionamento entre casos de uso paralelos}}{23}
+\contentsline {figure}{\numberline {8}{\ignorespaces Representa\c c\~ao dos atores}}{23}
+\contentsline {subfigure}{\string \numberline {8(a)}{\ignorespaces Ator exclusivo}}{23}
+\contentsline {subfigure}{\string \numberline {8(b)}{\ignorespaces Ator paralelo}}{23}
+\contentsline {subfigure}{\string \numberline {8(c)}{\ignorespaces Ator distribu\IeC {\'\i }do}}{23}
+\contentsline {subfigure}{\string \numberline {8(d)}{\ignorespaces Ator paralelo e distribu\IeC {\'\i }do}}{23}
+\contentsline {figure}{\numberline {9}{\ignorespaces Representa\c c\~ao dos casos de uso}}{23}
+\contentsline {subfigure}{\string \numberline {9(a)}{\ignorespaces Caso de uso sequencial}}{23}
+\contentsline {subfigure}{\string \numberline {9(b)}{\ignorespaces Caso de uso distribu\IeC {\'\i }do}}{23}
+\contentsline {figure}{\numberline {10}{\ignorespaces Diagrama de classes - Figures, DrawingPanel, ObserverArgument (package veryhot)}}{27}
+\contentsline {figure}{\numberline {11}{\ignorespaces Diagrama de classes - Tool - (package veryhot.tool)}}{28}
+\contentsline {figure}{\numberline {12}{\ignorespaces Diagrama de classes - Microkernel (package microkernel)}}{29}
+\contentsline {figure}{\numberline {13}{\ignorespaces Arquitetura do sistema}}{30}
+\contentsline {figure}{\numberline {14}{\ignorespaces Componentes do sistema}}{31}
+\contentsline {figure}{\numberline {15}{\ignorespaces Diagrama de classe da CoolCase}}{32}
+\contentsline {figure}{\numberline {16}{\ignorespaces Prot\'otipo da ferramenta em funcionamento}}{33}

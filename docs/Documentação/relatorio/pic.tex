@@ -1,0 +1,817 @@
+% Relatório de Iniciação Científica - PIC2000
+% Revisão 1
+
+\documentclass[a4paper,12pt]{article}	% Requer-se fonte 12 e folha A4 no relatório do PIC
+
+\usepackage[brazil]{babel}	% Yes, sir, prepara tudo (ou quase tudo) para escrever em português do Brasil
+\usepackage[latin1]{inputenc}	% Faz o latex entender a codificação de caracteres extendidos
+\usepackage[T1]{fontenc}	% Seleciona o tipo de letras extendido (parte do suporte a acentuação)
+\usepackage{times}	% Utiliza a fonte Times New Roman
+\usepackage{tabularx}
+\usepackage[pdftex]{graphicx}
+\usepackage{float}
+\usepackage{indentfirst}	% Para indentar o primeiro parágrafo
+\usepackage{abnt-alf}	% Norma ABNT, no caso somente para as bibliografias
+\usepackage{subfigure}
+\usepackage{calc}	% Utilizada para fazer a capa
+\usepackage{geometry}	% Utilizado para configurar as margens
+
+\geometry{verbose,a4paper,tmargin=2cm,bmargin=2cm,lmargin=3cm,rmargin=2cm}
+
+% A parte de margem _parece_ ser complicada mas não é. A especificação do relatório do PIC não fala
+% nada a respeito disso, por isso vou assumir que as margens são 2,2,2,2, tal qual as margens do
+% formulário do PIC. Sendo as dimensoes da folha a4 21x29,7, temos então que:
+
+% \setlength{\textwidth}{17cm}	% 21-2-2=17
+%\setlength{\textheight}{24cm}	% 29.7-2-2=25.7 (?)
+%\setlength{\topmargin}{-0.54cm}	% Margem superior = 1 polegada + o valor definido. Uma polegada
+				% vale 2.54, então topmargin deve ser 2-2.54=-0.54
+%\setlength{\oddsidemargin}{-0.54cm}	% Mesmo raciocício anterior.
+
+
+
+\title{Uma Ferramenta para Apoiar a Definição de Requisitos no Desenvolvimento de Software Distribuído}
+\author{Marco Aurélio Graciotto Silva}
+
+\begin{document}
+\DeclareGraphicsExtensions{.png,.jpg}
+
+\begin{titlepage}
+\noindent \Large \textbf{UNIVERSIDADE ESTADUAL DE MARINGÁ \\
+PROGRAMA DE INICIAÇÃO CIENTÍFICA - PIC \\
+DEPARTAMENTO DE INFORMÁTICA \\
+ORIENTADORA: Prof$^a$. Dr$^a$. Elisa Hatsue Moriya Huzita \\
+ACADÊMICO: Marco Aurélio Graciotto Silva \\}
+	
+\vspace{\stretch{.7}}
+
+\begin{center}
+	\LARGE \textbf{Uma Ferramenta para Apoiar a Definição de Requisitos no Desenvolvimento de Software Distribuído}
+\end{center}
+
+\vspace{\stretch{.4}}
+\vspace{\stretch{.6}}
+\begin{center}
+	\Large \textbf{Maringá - PR, agosto de 2001.}
+\end{center}
+\end{titlepage}
+
+\begin{titlepage}
+\noindent \Large \textbf{UNIVERSIDADE ESTADUAL DE MARINGÁ \\
+	PROGRAMA DE INICIAÇÃO CIENTÍFICA - PIC \\
+	DEPARTAMENTO DE INFORMÁTICA \\
+	ORIENTADORA: Prof$^a$. Dr$^a$. Elisa Hatsue Moriya Huzita \\
+	ACADÊMICO: Marco Aurélio Graciotto Silva \\}
+	
+	\vspace{\stretch{.7}}
+
+	\begin{center}
+		\LARGE \textbf{Uma Ferramenta para Apoiar a Definição de Requisitos no Desenvolvimento de Software Distribuído}
+	\end{center}
+
+	\vspace{\stretch{.4}}
+	\hspace{.5\textwidth}
+	\begin{minipage}{.5\textwidth}
+		\begin{flushright}
+			 \Large \textbf{Relatório final de projeto \\ de iniciação científica}
+		\end{flushright}
+	\end{minipage}
+	
+	\vspace{\stretch{.6}}
+	\begin{center}
+		\Large \textbf{Maringá - PR, agosto de 2001.}
+	\end{center}
+\end{titlepage}
+
+\pagestyle{empty}	% Não mostra numeração de página nas partes iniciais do relatório
+
+
+\begin{abstract}
+As recentes tendências do mercado têm mostrado que a complexidade do software continuará a crescer drasticamente nas próximas décadas. Aliada a isto, a globalização acaba por envolver organizações de diferentes portes, com políticas peculiares de tomadas de decisão. O volume de dados a ser utilizado cresce ao mesmo tempo que temos uma descentralização deste. Neste novo panorama, sistemas isolados, monolíticos, são uma solução pouco eficaz, dando lugar aos sistemas distribuídos. O advento de sistemas distribuídos leva a aplicações mais complexas, implicando que desenvolver software usando métodos tradicionais torna-se ineficiente. A redução desta complexidade pode ser obtida através da decomposição, estruturação e delegação de tarefas, empregando para isto metodologias de desenvolvimento adequada. A criação de ferramentas que dêem suporte a tais metodologias é desejável. O objetivo deste projeto é o desenvolvimento de uma ferramenta que auxiliará na definição de requisitos de sistemas distribuídos, a ser utilizada na Metodologia de Desenvolvimento Baseado em Objetos Distribuídos Inteligentes (MDSODI). Foram estudadas várias abordagens que podem ser utilizadas para a definição de requisitos: pontos de vista; uso de padrões na construção de cenários; padrões de requisitos e utilização de modelos para descrição, qualificação, análise e validação de requisitos. Destas, duas foram escolhidas: ponto de vistas por possibilitar a rastreabilidade dos casos de uso, ser facilmente utilizados nos diversos processos de engenharia de software e de fácil aplicabilidade; e utilização de modelos para descrição, qualificação, análise e validação de requisito, que apóia a resolução dos conflitos das visões sobre o sistema, determinando critérios para esta tarefa. O projeto desta ferramenta está documentado em UML e implementado em Java, utilizando o ORBacus como middleware CORBA e o banco de dados PostgreSQL para o depósito.
+\end{abstract}
+\newpage
+
+\tableofcontents
+\newpage
+
+\listoffigures
+\newpage
+
+\listoftables
+\newpage	% Inicia uma nova página, necessário para não misturar com o índice
+
+\pagestyle{plain}	% Começa a mostrar a numeração de página
+
+
+\setcounter{section}{0}
+
+\section{Introdução}
+
+As recentes tendências do mercado têm mostrado que a complexidade do software continuará a crescer drasticamente nas próximas décadas. Aliada a isto, a crescente globalização acaba por envolver diferentes organizações em direntes lugares com opolíticas peculiares de tomadas de decisão, grandes organizações utilizam-se de um grande volume de dados que, normalmente, encontram-se dispersos em diferentes lugares. Deste modo, os produtos de software isolados estão caindo em desuso à medida que são cada vez mais disseminadas a Internet e as Intranets.
+
+O advento de sistemas distribuídos heterogêneos leva a aplicações mais complexas implicando que desenvolver software usando métodos tradicionais tem se tornado cada vez mais inadequado. A redução desta complexidade pode ser obtida através da decomposição, estrututação e delegação de tarefas, empregando para isto uma metodologia de desenvolvimento adequada. Portanto, os modernos engenheiros de software deverão adequar os sistemas que projetam a esta nova realidade. Tais fatos induzem a uma procura por técnicas alternativas que possam ser utilizadas no desenvolvimento de software como, por exemplo, a utilização de agentes inteligentes \cite{knapik:1998,wooldridge:1999}.
+
+É importante notar ainda que a distribuição pode se referir não apenas ao processamento mas, também, ao seu desenvolvimento. Este fato nos leva a necessidade de adotar novas tecnologias e condutas no processo automatizado para o desenvolvimento deste tipo de software. Em \cite{huzita:1995}, são analisadas várias ferramentas que dão suporte ao desenvolvimento de software paralelo, tais como PO, GRASPIN, VISTA, PROOF, TRAPPER, PARSE, mas tais ferramentas trabalham os aspectos de programação, não apresentando preocupações quanto ao processo de engenharia de software, à exceção de PROOF e PARSE. Encontra-se na literatura referências a alguns poucos outros ambientes de desenvolvimento de software: ONIX\cite{sato:1994}, ABACO\cite{souza:1998}, PROSOFT\cite{schelebbe:1995}, sendo somente estes dois últimos destinados ao desenvolvimento de software distribuído. Assim, encontra-se em andamento um projeto para definir uma metodologia para desenvolvimento de software baseado em objetos distribuídos inteligente (MDSODI), oferecendo recursos de reusabilidade de componentes.
+
+Um aspecto fundamental no processo de engenharia, abordado neste projeto, é a definição de requisitos. Utilizando técnicas tais como pontos de vista, qualificação automática de requisitos, identificação de padrões de reuso, aliada com extensões de linguagens de modelagem, empregando uma ferramenta para automatizar a sua aplicação no processo, problemas típicos deste etapas são abordados.
+
+
+
+\section{Objetivos}
+
+O objetivo deste projeto é desenvolver um protótipo de uma ferramenta para apoiar a definição de requisitos para projeto de software distribuído. Os objetivos específicos são:
+
+\begin{itemize}
+	\itemsep=-.3mm
+	\item Estudo de processo de desenvolvimento de software;
+	\item Estudo da MDSODI - Metodologia de desenvolvimento baseada em objetos distribuídos inteligentes;
+	\item Definição da arquitetura do protótipo;
+	\item Especificação da interface do protótipo da ferramenta;
+	\item Implementação de um protótipo da ferramenta para dar suporte à especificação de requisitos;
+	\item Avaliação do protótipo utilizando-o em estudos de caso.
+\end{itemize}
+
+\section{Materiais e métodos}
+
+\subsection{Repositórios}
+
+Repositórios são aplicações que possibilitam o armazenamento de dados utilizados e gerados no processo de engenharia. Eles permitem um acesso transparente às informações nele armazenadas, possui mecanismos de controle de versão, aplica controle de acesso aos dados. Além disto, geralmente os repositórios armazenam algum tipo de metadado que possibilita a extração de conhecimento do conteúdo nele armazenado. Foram estudados alguns depósitos: kMail, WebCADET, o desenvolvido pelo projeto NIST Design Repository, Unisys UREP. Todos eles são repositórios, cada qual com uma ou outra característica específica quanto ao armazenamento de dados, mas sempre com uma metodologia para tratamento do conhecimento diferente.
+
+\subsubsection{kMail}
+
+Praticamente todas as empresas possuem uma base de conhecimento ampla porém, muitas vezes, subutilizadas. Muito provavelmente, isto se deve a falhas em alguma das atividades de gerenciamento desta base: aquisição de novos dados, a organização destes ou sua distribuição. Em pesquisa realizada por Daniel O'Leary\cite{leary:1998}, são apontadas algumas razões desta subutilização:
+
+\begin{itemize}
+	\itemsep=-.3mm
+	\item As atividades realizadas no banco devem ser orientadas a ações;
+	\item As bases de conhecimentos devem possuir mecanismos eficientes para facilitar a incorporação de novos dados, geração de conhecimento e sua consequente atualização;
+	\item O conhecimento não deve substituir a criatividade e sim estimulá-la e guiá-la.
+\end{itemize}
+
+A partir do momento em que a base começa a fazer diferença nos processos da empresa, aumentando seus lucros, o sistema começa a ganhar respeito, valor e, conseqüentemente, mais investimento.
+
+O kMail é uma ferramenta (dividida em duas partes: uma cliente e outra servidor) que torna disponível o conhecimento organizacional de acordo com as ações das pessoas, usando para isto uma base de conhecimento acessível pela Internet (através de URLs), uma base de metaconhecimento e a ferramenta que, utilizando dessas bases, fornece a informação mais apropriada de acordo com as ações em execução, resolvendo os pontos criticados por Daniel quanto a subutilização das bases de conhecimentos da empresa.
+
+Um importante aspecto do kMail é que as ações consistem em trocas de emails. A escolha deste meio de comunicação deve-se ao fato de que, muito provavelmente, este serviço já esteja implementado na empresa, o que torna a curva de aprendizado para este novo sistema muito mais suave. Pesquisas também provam que o email é utilizado, na maioria dos casos, para requisitar ou responder algo, ou seja, exatamento no momento em que os dados que temos na base de conhecimento organizacional fazem-se necessários.
+
+Além do serviço de email, o kMail possui dois outros requisitos: os conhecimentos da base, acessiveis pela Internet, e um sistema de metaconhecimento para facilitar o acesso às informações da base. O kMail não trata da organização do conhecimento, este é o seu requisito principal. Já o sistema de metaconhecimento é uma parte fundamental do kMail. Armazenando dados dos emails enviados (remetente, destinatário, assunto, data de envio) e relacionando estes dados com os perfis dos usuários (cargo, experiência, etc), determina-se o contexto situacional que vai possibilitar a criação de visões da base de conhecimento. Destas escolhe-se a mais relevante para ser utilizada.
+
+Detalhando mais o funcionamento do kMail, cita-se um pseudo-exemplo de como seria a utilização do sistema:
+
+\begin{enumerate}
+	\itemsep=-.3mm
+	\item Envia-se um email para o setor de marketing da empresa a respeito de um novo produto: a calça jeans vermelha XYZ. Para criar este email, utiliza-se um cliente kMail.
+	\item O cliente kMail faz uma análise do email, identificando atributos importantes do email necessários à criação do contexto. Em seguida, envia-se este email para o servidor kMail.
+	\item O servidor kMail, com os dados recém-recebidos, os perfis de usuários e o meta-conhecimento já existente sobre a base de dados, cria várias visões (pessoal, supervisional, relacionada ao projeto, relacionada ao cargo).
+	\item Esses dados são repassados ao cliente kMail. Agora, o autor do email deve inserir links que considere relevantes, valida os já existentes e, enfim, confirma o repasse do email para os destinatários.
+	\item Os destinatários recebem o email em programa de email comum (que aceite trabalhar com emails no formato HTML). Esses emails vem com os links selecionados pelo autor do email, a visão que ele selecionou.
+\end{enumerate}
+
+Com isto, consegue-se tirar proveito da base de conhecimento de maneira transparente e rápida. A validação dos links (pelo autor) e os acessos aos links (pelos destinatários) permitem determinar a importância dos dados da base, que dados não são utilizados, permitindo assim a obtenção de métricas para melhorar a organização da base e melhorar a criação de visão e o aprimoramento do mecanismo de meta-conhecimento, fazendo-o considerar estes diversos graus de utilização dos dados.
+
+
+
+\subsubsection{WebCATET}
+
+O WebCADET consiste numa ferramenta para suporte a decisão baseada na Web, permitindo assim seu uso por várias pessoas em diferentes locais do mundo, ou seja, de maneira distribuída. Neste projeto adotou-se o paradigma de "IA como texto", que possibilita ver o conhecimento da base na forma de texto, legível por seres humanos (obedecendo regras de gramática e vocabulário adequados para isso), garantindo assim transparência ao usuários do sistema.
+
+O principal do WebCADET é a sua representação do conhecimento, estruturada de acordo com o grau de detalhamento, começando no nível mais baixo. Por exemplo, o sistema começa com a opção de escolher o setor ao qual o produto a ser projetado melhor se adequa, posteriormente temos a escolha do tipo de produto, em seguida características específicas do mesmo. Este seria o penútimo nível da hierarquia do sistema que interagiria com as regras que temos sobre os produtos (que seria o último nível).
+
+As regras, que são a base fundamental do suporte à decisão, juntamente com o mecanismo de inferência, são estruturadas da seguinte forma:
+
+\begin{itemize}
+	\itemsep=-.3mm
+	\item \textbf{rule\_id}: Identificador único da regra em todo o sistema.
+	\item \textbf{name}: Nome da regra.
+	\item \textbf{preconditions}: Pré-condições que devem ser atendidas.
+	\item \textbf{conditions}: Permite qualificar os atributos do produto sendo proposto. Basicamente são regras condicionais como, por exemplo, "if button\_number\_size gt 3 then 3 else 0".
+	\item \textbf{scale}: Fator normalizador.
+	\item \textbf{history}: Histórico da regra: quando foi criada e por quem, quando foi alterada, o que foi alterado, etc.
+	\item \textbf{keywords}: Palavras chaves para ajudar a identificar o contexto da regra.
+\end{itemize}
+
+O sistema tem três modos de uso: avaliação de projetos, consulta à base de conhecimento e adição de novos conhecimentos. Em avaliação de projetos, o projetista detalha os dados de seu projeto e o sistema, aplicando as regras cabíveis, verifica quão bem sucedido seria o produto, atribuindo uma nota ao produto. Pode-se também verificar o porquê de cada nota, com o sistema retornando um texto com base nas regras (\ref{webcadet:regra}aplicadas (aqui temos o emprego da "IA como texto"). Outro modo de operação é o de consulta. Neste apenas percorre-se a base de conhecimento, sendo útil para verificar os dados que os sistema já tem armazenado. Enfim, temos o modo que permite a inserção de conhecimento, no qual podemos criar novos produtos, adicionar regras a eles (ou então a produtos já existentes).
+
+\begin{figure}[!htb]
+	\centering
+	\label{webcadet:regra}
+	\includegraphics{webcadetrule.png}
+	\caption{Exemplo de regra do Webcadet.}
+\end{figure}
+
+Alguns aspectos do WebCadet foram criticados em testes de usabilidade: impossibilidade de salvar sessões no sistema (o que obrigaria a criação de produtos em questões de minutos, sem interrupções) e navegabilidade (um tanto quanto confusa). Mas a base do sistema em si, o mecanismo de inferência e a conseqüente aplicação das regras, possibitando a rápida avaliação de projetos, é funcional, inclusive atraindo a atenção de algumas universidades e até empresas interessadas em testar o sistema, conforme relatado no artigo estudado.
+
+
+\subsubsection{Repositório de Projetos do NIST}
+
+O Repositório de Projetos NIST objetiva a criação de uma linguagem de modelamento de projeto, interfaces para manipular os artefatos do repositório, identificação de taxonomias de funções e fluxos associados às mesmas e a criação de um protótipo de repositório de projetos. Por ser financiado por empresas, o projeto é bem prático, funcional e objetivo.
+
+A representação dos artefatos do depósito é feita em torno de três parâmetros: forma, função e comportamento. Adotar-se uma linguagem específica para descrevê-los, representando os artefatos através de um conjunto de objetos e seus relacionamentos, tentando ao máximo a utilização de termos únicos entre as descrições, seguindo uma estrutura definida. Outra importante característica é a criação de taxonomias para funções e fluxos. Essas taxonomias permitem a modelagem de funções para uma grande variedade de artefatos.
+
+
+
+
+\subsubsection{Osirix}
+
+O Osirix é um sistema gerenciador de conhecimento que, utilizando documentos XML validados com DTDs, possibilita a procura por informações de maneira ágil e eficaz.
+
+O processo de criação das DTDs e agregamento de novos documentos XML no repositório pode ser assim descrito:
+
+\begin{enumerate}
+	\itemsep=-.3mm
+	\item O primeiro passo para a construção do depósito é a definição da ontologia para uma memória corporacional (base de conhecimento da empresa).. Isso é feito com a linguagem CML (CommonKADS Conceptual Modeling Language).
+	\item Define-se então um modelo padrão para os documentos XML que serão armazenados no repositório, criando a \textit{core DTD}.
+	\item Aqui o Osirix faz sua primeira aparição, transformando a ontologia definida em CML em um DTD e integrando-a com a \textit{core DTD}.
+	\item Agora temos a fase de alimentar o depósito. O autor de documentos deve enviá-los em um formato válido, de acordo com uma DTD específica definida no repositório.
+	\item O repositório valida este documento XML. Caso esteja correto, armazena-o.
+\end{enumerate}
+
+Enfim, define-se o mecanismo de busca do repositório. Ele adota um modelo híbrido, fazendo primeiramente uma busca tradicional e, depois, uma busca utilizando-se da ontologia dos documentos encontrados. O primeiro método de busca usa mecanismos semelhantes aos do Google, Altavista e afins, sendo extremamente rápido porém muito limitado, suportando apenas restrições do tipo AND, OR, NOT. A segunda busca é feita observando os atributos dos documentos XML encontrados e as palavras chaves da buscas. Este segundo método é o mais importante de todos, por isso cabe a ele um maior detalhamento:
+
+\begin{enumerate}
+	\itemsep=-.3mm
+	\item Identificam-se os elementos XML dos documentos XML encontrados na busca anterior.
+	\item Procura-se a presença semântica de uma palavra chave (conceito ou propriedade) requerida na pesquisa. Este presença semântica significa a presença de uma palavra chave como um \textit{tag} na descrição ontológica do documento.
+	\item Verifica-se se a tag encontrada possui o valor requisitado na pesquisa. Caso positivo, cria-se uma página HTML a partir do documento XML encontrado (utilizando para isso o XSL) e envia o resultado como resposta da pesquisa.
+\end{enumerate}
+
+
+
+\subsection{CORBA}
+
+Um sistema distribuído consiste em vários componentes, localizados em computadores ligados por uma rede, que se comunicam e coordenam através de passagem de mensagens. Disto deriva-se várias características: concorrência de componentes, ausência de uma hora global (dificultando a sincronização) e falhas dos componentes. Um sistema deste tipo precisa atender características tais como segurança, independência de escala, abertura, heterogeniedade dos componentes, transparência. Construir um sistema com tamanha capacidade é, obviamente, uma tarefa difícil. A fim de facilitar a realização de tais sistemas, várias tecnologias foram desenvolvidas: CORBA, RMI, Jini, DCOM, SOAP. Destas, a única solução aberta, madura, com implementações gratuitas, capaz de funcionar em ambientes heterogêneos, é o CORBA.
+
+O Common Object Request Broker Arquitecture (CORBA) foi criado pela Object Management Group (OMG), uma organização internacional com mais de 800 membros (empresas, engenheiros de software e usuários). Seu objetivo é servir como plataforma para a construção de sistemas distribuídos baseados em objetos e, ao mesmo tempo, possibilitar a utilização de software legado no sistema. Sua arquitetura compõe-se de quatro componentes:
+
+\begin{itemize}
+	\itemsep=-.3mm
+	\item Object Request Broker (ORB): permite a comunicação transparente entre os objetos no sistema disbribuído
+	\item Object Service: provêem serviços de baixo nível, tal como localização, persistência.
+	\item Common Facility: são ferramentas que permitem a construção de sistemas num domínio específico.
+	\item Application Object: são as aplicações existentes no sistema distribuído, geralmente feitas com auxílio dos serviços e facilidades CORBA.
+\end{itemize}
+
+O ORB provê meios para que requisições sejam feitas pelos objetos de maneira transparente, provendo assim interoperabilidade entre aplicações em diferentes máquinas em sistemas distribuídos heterogêneos.
+
+Para fazer uma requisição, um cliente pode utilizar-se da invocação dinâmica ou de subs IDL. O ORB, por sua vez, precisa repassar a requisição para a implementação do objeto requerido apropriadamente. Isso pode ser feito utilizando-se esqueletos IDL ou através de esqueletos dinâmicos. Essa flexibilidade se deve aos mecanismos de definição de interfaces do CORBA: interfaces estáticas definidas com a linguagem IDL (Interface Definition Language) e repositórios de interfaces, no qual as interfaces são definidas em tempo de execução. A figura \ref{corba:requisicaoacionamento} retrata toda esta estratégia.
+
+\begin{figure}[!htb]
+	\label{corba:requisicaoacionamento}
+	\centering
+	\includegraphics{corbarequisicaoacionamento.png}
+	\caption{Mecanismos para requisição e acionamento de objetos}
+\end{figure}
+
+Sua complexidade é proporcional à sua importância na arquitetura, sendo necessário o estabelecimento de interfaces padronizadas quando visto de fora e proprietárias quanto a arquitetura interna de cada ORB. Em \ref{corba:ORBInterface} é possível observar as diversas interfaces do CORBA. As interfaces preenchidas com preto são comuns a todo ORB enquanto que as cinza claro são proprietárias, variando de implementação para implementação.
+
+\begin{figure}[!htb]
+	\label{corba:ORBInterface}
+	\centering
+	\includegraphics{corbainterfaceorb.png}
+	\caption{Interfaces do Object Request Broker}
+\end{figure}
+
+
+\subsection{Técnicas aplicáveis no processo de engenharia de requisitos}
+
+\subsubsection{Uso de padrões na construção de cenários}
+
+Uma alternativa aos métodos que empregam casos de uso é a utilização de cenários. Estes diferem do primeiro por conterem mais informações, serem tipados, ou seja, emprega-se tipo de atores ao invés de atores reais do domínio da aplicação. Apesar destes acréscimos, mantém-se a acessibilidade deste método quando se comparado ao de casos de uso.
+
+Uma técnica efetiva para construir tais cenários é através do vocabulário do Universo de Discurso, ou seja, as palavras mais utilizadas quanto a aplicação em questão. Este trabalho utiliza-se de uma estrutura denominada LEL (Léxico extendido da linguagem) que permite registrar tal vocabulário e sua semântica, deixando para uma etapa posterior a compreensão do problema. Cada símbolo descoberto é identificado por uma palavra ou frase relevante no domínio da aplicação, utilizando-se linguagem natural para isso, facilitando a comunicação com o stakeholder.
+
+A identificação de padrões nestes cenários permite a reutilização de soluções já existente em problemas similares. No entanto, é necessária uma técnica eficiente para identificar esses padrões. Este é o enfoque do artigo estudado, detalhado no texto a seguir.
+
+Seguindo a estratégia "divisão e conquista", os cenários são tratados como compostos de subcenários ou diversos episódios . Para cada um deste são considerados os seguintes aspectos:
+
+\begin{itemize}
+	\itemsep=-.3mm
+	\item Número de atores envolvidos;
+	\item Atores requerem resposta ou não;
+	\item A resposta deve ser imediata ou deferida;
+	\item O papel desempenhado pelo ator.
+\end{itemize}
+
+De todos os critérios acima, o mais importante, representativo, é o do papel desempenhado pelo ator, sua participação nos sub-cenários ou episódios. Baseando-se nisto, propõe-se a seguinte classificação para os episódios:
+
+\begin{itemize}
+	\itemsep=-.3mm
+	\item \textbf{p} (produção): um único ator, de maneira autonôma, realiza uma troca com o macrosistema.
+	\item \textbf{s} (serviço): um dos atores adquire o papel de ator ativo e realiza uma ação em benefício de um ou mais atores passivos.
+	\item \textbf{c} (colaboração): dois ou mais atores realizam uma ação que requer a participação de todos eles, produzindo um efeito global no sistema.
+	\item \textbf{d} (demanda): um dos atores desempenha um papel ativo e um ou mais são passivos, sendo que as ações do ator ativo exigem, implicitamente, a resposta dos atores passivos.
+	\item \textbf{r} (resposta): um ator, que fora passivo em um episódio do tipo \textbf{d}, assume o papel ativo e atende o pedido (responde a requisição do ator ativo no episódio \textbf{d}).
+	\item \textbf{i} (interação): são episódios que reunem as propriedades dos episódios de resposta (\textbf{r}) e demanda (\textbf{d}), atendendo um pedido prévio e gerando um novo.
+\end{itemize}
+
+Definidas as classificações dos episódos e sub-cenários, pode-se construir inúmeras situações com características bem definidas. Por exemplo, uma seqüência de episódios que começa com um do tipo \textbf{d} e continua com vários do tipo \textbf{i} implica na existência de dois ou mais atores realizando uma atividade interativa na qual uma ação de um ator provoca uma ação de outro ator e assim por diante. A esta seqüência de episódios da-se a classificação de Negociação. Porém, a classificação das situações não se restringe somente aos episódios, todo e qualquer elemento que pertença ou influa no cenário pode ser considerado.
+
+No estudo realizado, vários tipos de situações foram definidos de acordo com estes critérios:
+
+\begin{itemize}
+	\itemsep=-.3mm
+	\item \textbf{Produção}: realização de uma atividade produtiva que provocará um efeito sobre o macrosistema;
+	\item \textbf{Serviço}: prestação de um serviço que é necessário para um dos atores;
+	\item \textbf{Colaboração}: associação de vários atores para realizar uma atividade cooperativa com um objetivo comum;
+	\item \textbf{Negociação inconclusiva}: iniciação de uma atividade que requer uma sequência coordenada de ações por parte dos atores, necessitando de outra situação para concluir a negociação;
+	\item \textbf{Negociação inconclusiva com disparo de cenários}: iniciação de uma atividade que requer uma sequência coordenada de ações por parte dos atores, criando a necessidade de várias outras situações;
+	\item \textbf{Final de negociação}: sequência coordenada de ações por parte dos atores que finaliza uma atividade iniciada em outro cenário;
+	\item \textbf{Etapa de negociação}: sequência coordenada de ações por parte dos atores que continua uma atividade de uma situação anterior e cuja finalização é inconclusiva;
+	\item \textbf{Etapa de negociação com disparo de cenários}: sequência coordenada de ações por parte dos atores que continua uma atividade de uma situação anterior e cuja finalização resultará em várias outras situações;
+	\item \textbf{Negociação terminada}: fim de uma atividade que requer uma sequência coordenada de ações por parte dos atores.
+\end{itemize}
+
+Além disto, observou-se que várias situações são compostas de diferentes tipos de episódios, ou seja, novos tipos de cenários:
+
+\begin{itemize}
+	\itemsep=-.3mm
+	\item Produção + Serviço + Colaboração;
+	\item Negociação inconclusiva com Produção ou Serviço ou Colaboração;
+	\item Fim de negociação com Produção ou Serviço ou Colaboração;
+	\item Etapa de Negociação com Produção ou Serviço ou Colaboração;
+	\item Negociação terminada com Produção ou Serviço ou Colaboração;
+	\item Negociação inconclusiva com disparo de cenários e Produção ou Serviço ou Colaboração;
+	\item Etapa de negociação com disparo de cenários e Produção ou Serviço ou Colaboração.
+\end{itemize}
+
+Criada toda esta classificação e, com ela, os padrões de construção de cenários seguindo a estrutura definida por Leite \cite{leite:1997} título, objetivo, contexto, atores, recursos, episódios e exceções. Além destes dados, foram acrescentados textos complementares. Por exemplo, quanto aos episódios, pode-se acrescentar uma descrição dos tipos de episódios, a quantidade de episódios de cada tipo, a ordem em que estão. Um exemplo pode ser visto na figura \ref{descricao:padraoreuso}.
+
+A partir dos métodos usuais de aquisição de dados para elicitação de requisitos (entrevistas, questionários, etc), definem-se situações compostas por vários episódios. Classificam-se estes de acordo com o número de atores envolvidos, se requerem ou não resposta (e, se for o caso, se a resposta é necessária imediatamente ou pode ser deferida) e, principalmente, pelo papel desempenhado pelos atores. Consequentemente, pode-se classificar as situações de acordo com a classificação dos episódios que as compõem (ou seja, de acordo com um padrão). Apesar de existir um leque grande de padrões devido as combinações de tipos de episódios existentes em cada cenário, utilizando-se uma heurística baseada em árvores de decisão esta tarefe torna-se muito fácil.
+
+\begin{figure}[!htb]
+	\centering
+	\label{descricao:padraoreuso}
+	\includegraphics{descricaopadrao.png}
+	\caption{Descrição do padrão Negociação Terminada com Produção.}
+\end{figure}
+
+No entanto, de nada adiantaria todo este esforço se não houvesse uma maneira viável de empregá-lo. Portanto, a seguinte heurística é empregada:
+
+\begin{enumerate}
+	\itemsep=-.3mm
+	\item O primeiro passo é produzir uma primeira versão dos cenários a partir do léxico do domínio da aplicação. Propõe-se que este seja criado através observação, leitura de documentação, entrevistas, dentre outras técnicas possíveis. Enfim, definem-se várias situações que proverão um meio para verificação e validação dos cenários.
+	\item Identificam-se os atores do universo do domínio da aplicação e extraem-se os efeitos causados por estes atores. Cada um destes será um novo cenário que será incorporado a lista de cenários canditados.
+	\item Através de um sistema especialista (figura \ref{arvoredecisao:padraoreuso}, tenta-se extrair o máximo possível de informação sobre os cenários candidatos.
+\end{enumerate}
+
+\begin{figure}[!htb]
+	\centering
+	\label{arvoredecisao:padraoreuso}
+	\includegraphics{arvoredecisao.png}
+	\caption{Árvore de decisão para a seleção de padrões.}
+\end{figure}
+
+A aplicação da heurística, conforme pode ser notado, não é complicada. Mas o mais importante é a validade da técnica. Esta possui características interessantes, tais como a possibilidade de reuso com um alto grau de abstração, logo no início do processo de engenharia de software. Isto permite que muitos erros sejam evitados ou detectados prematuramente, além de tornar o processo mais rápido. O fato de ser baseado em cenários restringe seu emprego a alguns poucos métodos de engenharia de software, felizmente ele pode ser utilizado neste em que se baseia a ferramenta deste projeto.
+
+
+
+\subsubsection{Identificação de Padrões de Reutilização de Requisitos de Sistemas de Informação}
+
+A aplicação de modelos e padrões de requisitos, uma vez padronizados quanto a maneira como são especificidados, permite identificar padrões de reutilização de requisitos, tanto os requisitos do cliente (requisitos-C) como dos requisitos do desenvolvedor (requisitos-D), permitindo assim um desenvolvimento mais rápido e eficiente do software. Outro fato é que, graças a rastreabilidade entre os requisitos-C, requisitos-D e elementos de mais baixo nível de abstração (tais como componentes de software), pode-se também reutilizar estruturas mais complexas tais como código fonte, ou seja, um reuso vertical, abrangendo diversos níveis de abstração do software.
+
+Classifica-se os requisitos em requisitos-C (requisitos escritos/compreensíveis para o cliente) e requisitos-D (requisitos feitos pelo desenvolvedor). Os requisitos-C podem ser de três tipos:
+
+\begin{itemize}
+	\itemsep=-.3mm
+	\item{Requisitos de informação}: informações deve ser armazenada no sistema para satisfazer as necessidades dos clientes e usuários.
+	\item{Requisitos funcionais}: casos de uso do sistema, contendo informações tais como o evento de ativação, as pré-condições, as pós-condições, os passos que compõe o caso de uso e suas exceções.
+	\item{Requisitos não funcionais}: características não funcionais que o cliente e o usuário desejam no sistema.
+\end{itemize}
+
+Dentre estes tipo de requisitos-C, identificam-se vários padrões-R$_c$. No caso de requisitos de informação, por exemplo: cliente/sócio, produto/artigo, empregado, venda/fatura, fornecedor, pedido ao fornecedor, nota fiscal. Desta padrões, o que o ocorre com maior frequência é o primeiro, cliente-sócio (mais de 90\% dos casos). Depois temos produto/artigo com 60\% e assim por diante. Tão interessante quanto isto é o que estes padrões-R de requisitos de informação são diretamente utilizáveis, necessitando de mínimas modificações. O mesmo já não acontece com os padrões-R$_c$ de requisitos funcionais. Estes são padrões baseados em parâmetros, o que demanda em um maior esforço para abstrair o padrão e, depois, os parâmetros que serão aplicados.
+
+Além destes, temos os padrões de reutilização de requisitos-D (padrões-R$_d$). Eles sempre se relacionam com os seus respectivos padrões-R$_c$. A diferença entre um padrão e outro é o nível de detalhamento, trabalhando-se em um grau de abstração mais baixo. Os padrões-R$_c$ para requisitos de informação são bem próximos de uma definição de classe, com a especificação explícita dos tipos de dados envolvidos. O mesmo acontece para os padrões-R$_d$ para requisitos funcionais, utilizando OCL por exemplo.
+
+
+\subsubsection{Pontos de vista}
+
+A engenharia de requisitos orientada a ponto de vistas vêm do reconhecimento que os requisitos do sistema são gerados por várias fontes distintas e que tal realidade deve ser incluída explicitamente no processo. Esta visão não é absolutamente nova, na verdade desde o final da década de 70, com o SADT \cite{schoman:1997} e o  SRD {orr:1981}, houve este reconhecimento. Porém, a utilização disto nunca ocorreu na proporção em que deveria, visto sua abrangência. Um exemplo isolado seria o CORE \cite{mullery:1979}, utilizado pelo ministério de defesa da Inglaterra, do qual não se tem muitas informações nem ferramentas disponíveis a preços razoáveis.
+
+Durante as últimas décadas, várias pesquisas foram desenvolvidas na área, surgindo vários modelos de ponto de vistas \cite{finkelstein:1990, leite:1989, fickas:1991}. A origem de modelos diferentes surge das caracteristicas intrinsecas dos projetos para o qual o método foi criado, tomando definições de ponto de vistas que facilitassem o desenvolvimento dos sistemas. Por exemplo, em \cite{sommerville:1996} são descritos os seguintes tipo de pontos de vistas:
+
+\begin{itemize}
+	\itemsep=-.3mm
+	\item{Uma fonte ou sumidouro de dados}: Os pontos de vista são responsáveis por produzir ou consumir dados. Analisando o que é produzido e consumido, podemos detectar, por exemplo, dados gerados mas não utilizados e vice versa.
+	\item{Um framework para representação}: Cada ponto de vista é considerado como um tipo particular de modelo do sistema (por exemplo, um modelo entidade-re\-la\-cio\-na\-men\-to, um modelo de máquina de estados, etc). Comparando-os, torna-se possível a descoberta de vários requisitos que não seriam detectados sem a utilização desta técnica.
+	\item{Um receptor de serviços}: Os pontos de vista são externos ao sistema e recebem serviços deste.
+\end{itemize}
+
+Devido a natureza deste projeto, que visa uma ferramenta que suporte a definição dos requisitos, tendo como base um método de análise de requisitos voltado ao usuário (casos de uso), a concepção de um ponto de vista como um receptor de serviços é a mais apropriada.
+
+
+\subsubsection{REQAV: Modelo para Descrição, Qualificação, Análise e Validação de Requisitos}
+
+A necessidade de uma definição clara do software a ser construído é vital para o processo de engenharia de software. O REQAV é um modelo que aborda esse problema, propondo critérios de valor e peso à informação dos stakeholders para estabelecer condições de análise e validação dos requisitos.
+
+O processo é composto por onze etapas, agrupadas em cinco fases: descrição do requisito, qualificação do requisito, qualificação da fonte de informação, aplicação de parâmetros de qualificação e composição do quadro de avaliação de risco de implementação do requisito.
+
+A descrição dos requisitos consiste em planejamento, pesquisa inicial do material existente, identificação do stakeholder, descrição inicial dos requisitos, estruturação dos dados e composição da versão inicial do documento de requisitos. Ao final desta etapa, gera-se um documento preliminar de descrição de requisitos e um quadro descritivo de requisitos.
+
+A fase de qualificação dos requisitos obtém a qualificação de cada requisito requisito e a relação de dependência entre eles, analisando, para isso, três aspectos: qualificação funcional, área de origem e a relação de dependência entre eles. Adotando uma qualificação variando de 1 a n, teríamos n$^3$ possíveis combinações (ou seja, n$^3$ níveis de qualificação do requisito).
+
+A qualificação da fonte de informação obtém a qualificação do stackholder em função do seu ponto de vista, sua qualificação funcional na organização  e a exigência da informação. O raciocínio segue o mesmo da qualificação dos requisitos (n$^3$ níveis de qualificação possíveis).
+
+A aplicação de parâmetros de qualificação compreende a apropriação dos resultados das etapas de qualificação do requisito, qualificação da fonte de informação e o comparativo dos resultados para avaliação de risco. 
+
+Finalmente, temos a fase de composição do quadro de avaliação de risco. Esta consiste em, a partir da avaliação das informações obtidas na qualificação dos requisitos e das fontes de informações, juntamente com a aplicação de parâmetros de qualificação, gerar um quadro de avaliação de risco. 
+
+A aplicação do modelo proposto possui inúmeras vantagens:
+
+\begin{itemize}
+	\itemsep=-.3mm
+	\item Os critérios adotados permitem uma visualização dos requisitos prioritários;
+	\item Estes mesmos critérios possibilitam identificar requisitos que terão de ser revisados;
+	\item A aplicação do modelo facilita a manutenção do foco durante o desenvolvimento do sistema;
+	\item As informações geradas durante o processo servem de fundamento para a negociação dos requisitos.
+\end{itemize}
+
+
+\subsubsection{Usando diferentes meios de comunicação na negociação de requisitos}
+
+Há tempos percebe-se a necessidade de aproximação dos clientes e desenvolvedores para definir os requisitos, principalmente para resolver os conflitos encontrados. Sempre imaginou-se que a maneira mais efetiva de fazê-lo era através de um encontro cara a cara entre as pessoas que vão negociar os conflitos. No artigo estudado [DAM2000], investiga-se a performance de grupo e relacionamento interpessoal na engenharia de requisitos distribuída, confrontando-se, então, a comunicação utilizando o computador e seus recursos multimídias (som e imagem) com a forma de comunicação que até então se acreditava ser mais efetiva.
+
+Na pesquisa realizada, foram estabelecidos dois objetivos: o estudo do efeito da comunicação no desempenho do grupo na negociação de requisitos e os efeitos da configuração do grupo. Tomou-se como variáveis independentes o modo de comunicação e o arranjo do grupo, as variáveis dependentes foram o desempenho do grupo e percepção pessoal. Destas variáveis, a mais importante foi a de desempenho do grupo na negociação dos requisitos. Esta negociação pode ser distributiva (os conflitos são resolvidos através da eliminação de um, ou seja, o sistema atende somente uma parcela dos stakeholders) ou integrativa (os conflitos são negociados e, no fim, atende-se os requisitos de todos os envolvidos da melhor maneira possível).
+
+O experimento consistiu na negociação de requisitos funcionais de um sistema de gerenciamento bancário. Estudou-se cinco configurações de grupo: uma cara a cara e outras quatro distribuídas. Abaixo temos as configurações utilizadas:
+
+\begin{figure}[!htb]
+	\label{DiferentesMeiosComunicação}
+	\centering
+	\includegraphics{dan2000.png}
+	\caption{Cinco configurações de grupo: (a) cara a cara e (b) distribuída.}
+\end{figure}
+
+
+Os resultados do experimento são interessantes. Verificou-se que a comunicação utilizando o computador como meio é tão eficiente quanto e até melhor que a comunicação face a face. Mais ainda, observou-se em D1 os melhores resultados, melhores até que o F2F (que fora utilizado como referência para comparação). A explicação para este resultado é que, em D1, os stakeholders estavam separados. Outro fato interessante foi que em D2 e D3, no qual o analista de sistema está separado dos clientes e estes estão juntos, a negociação dos requisitos foi distributiva, conseqüencia da persuação que um cliente exerce sobre o outro, do proximididade entre as pessoas e relacionamentos interpessoais. Isto foi confirmado pela análise da percepção pessoal, na qual as pessoas, apesar de gostarem desta proximidade, mencionam que esta permite que uma pessoa influencie a outra mais facilmente, o que prejudica a realização da tarefa. A reduzidade capacidade de perceber as emoções das pessoas, como no caso D1, permitiram aos clientes um melhor entendimento das necessidades, permitindo um raciocínio mais claro, além de possibilitar que o analista de sistema se mantenha mais imparcial.
+
+
+
+\subsection{Formatos para intercâmbio de modelos}
+
+Uma das maiores barreiras no desenvolvimento de software, principalmente agora com a participação de grupos geograficamente distantes, é o intercâmbio de dados entre as diferentes ferramentas utilizadas. Uma solução simples seria forçar a todos a utilização de uma mesma ferramenta. Claro que isto é impossível na maioria dos casos, além de ser pouco eficiente. O melhor seria a criação de um formato padrão para realizar esta troca de informações. Em \cite{spool:2000}, vários requisitos foram definidos quanto a tal padrão:
+
+\begin{itemize}
+	\itemsep=-.3mm
+	\item Transparência: o processo de codificação/decodificação especificado pelo formato de intercâmbio de modelos não deve remover, adicionar ou alterar qualquer informação contida no modelo original.
+	\item Independência de escala: deve ser adequado a projetos reais, de grande porte. Algumas características que devem ser observadas são a compressibilidade, a possibilidade de fazer o intercâmbio de modelos parciais (somente as diferenças entre dois modelos, por exemplo), criação de ligações (referências) entre os modelos (ao invés de duplicar os dados).
+	\item Simplicidade: talvez o mais óbvio e, ao mesmo tempo, o mais difícil. O formato deve atacar a raiz do problema, o resolvendo de maneira eficiente (utilizando um mínimo de recurso computacional e humano). A simplicidade contribui também para uma menor complexidade das ferramentas necessárias para a manipulação dos dados gerados, além de reduzir a chance de ter erros no padrão.
+	\item Neutralidade: garante que o padrão acomoda (ou simplesmente ignora) aspectos específicos da plataforma na qual está sendo utilizado. Por exemplo: linguagem, extensões da linguagem sendo transportada.
+	\item Formalidade: A especificação deve estar definida formalmente, eliminando assim interpretações diferentes (e muitas vezes conflitantes) do padrão. Isto é vital para a construção de ferramentas que automatizem a aplicação do formato de intercâmbio de modelos.
+	\item Flexibilidade: capacidade de acomodar os mais diferentes tipos de modelos, sejam estes completos ou incompletos.
+	\item Capacidade de evolução: o formato deve ser capaz de atender futuros requisitos.
+	\item Popularidade: se o formato não for aceito pela maioria, sua função principal deixa de existir.
+	\item Completude: o formato deve ser completo o suficiente, evitando que os usuários (e ferramentas) tenham de incluir funções comumente usadas porém não diretamente suportadas pelo formato.
+	\item Identidade com metamodelos: utilizar um metamodelo universal ou utilizar metamodelos específicos no processo.
+	\item Reuso de padrões já existentes
+	\item Legibilidade: apesar do formato ser destinado a manipulação por ferramentas, é desejável que ele seja legível o suficiente para que um engenheiro de software consiga entendê-lo e modificá-lo sem a utilização das mesmas.
+	\item Integridade
+\end{itemize}
+
+De acordo com estes requisitos, pode-se identificar que vários podem ser atendidos com a utilização de XML (Extensible Markup Language): ela é simples, flexível, possui um bom suporte quanto a ferramentas, sua popularidade é extremamente elevada, possui boa legibilidade, reuso de padrões, neutralidade. A linguagem XML é bem recente, foi recomendada pela W3C em fevereiro de 1998, chegando a ser estranho uma linguagem tão recente ser tão popular. Mas, na verdade, os alicerces do XML são extremamente sólidos: ela se trata de um subconjunto da SGML (Standard Generalized Markup Language, ISO 8879:1986); todo o seu processo de criação foi acompanhado por empresas tais como IBM, Microsoft, todo o movimento opensource, sendo definida por uma organização sem fins lucrativos (W3C).
+
+No entanto, somente a utilização da XML não é o suficiente. São necessários mecanismos para suportar diferentes metamodelos de maneira fácil. A primeira solução imaginada, a utilização direta de metamodelos em DTDs ou XML Schema, era pouco flexível. A OMG decidiu criar, então, o XMI.
+
+Ele define regras para transformar metamodelos definidos em MOF em DTDs e, futuramente, XML Schemas. O MOF é a base na definição dos metamodelos utilizados pela OMG, logo todas as linguagens por ela definidas podem ser transportadas. Oficialmente, existem DTDs criadas para a UML e a MOF, mas nada impede que empresas criem suas próprias a partir de metamodelos definidos em MOF ou até mesmo UML, utilizando para isso os mecanismos do XMI.
+
+O único problema atual desta tecnologia é que nem todas as empresas adotam o mesmo metamodelo oficial. Por exemplo, o Rational Rose 2000 utiliza um metamodelo da UML ligeiramente diferente daquele definido na especificação da UML 1.3. Outras ferramentas, tais como o ArgoUML, que aceitam arquivos neste formato (XMI), conseguem ler o arquivo corretamente, no entanto o modelo por eles apresentados não é idêntico àquele do Rational Rose. Em um teste realizado em agosto de 2000, utilizando as ferramentas ArgoUML 0.8, Rational Rose 2000 com suporte a XMI, MagicDraw UML 3.6 e Together 4.0. Observou-se que suportar ou não o XMI era inútil, porque os documentos produzidos eram, em sua grande maioria, incompatíveis entre as diversas ferramentas (foi possível ler um diagrama de caso de uso do Together 4.0 no Rational Rose, porém mesmo este caso de teste não foi 100\% bem sucedido). Diante deste resultados, procurou-se informações mais aprofundadas sobre o assunto, utilizando principalmente listas de email. Nas duas listas consultadas\footnote{Lista sobre XMI do Distributed System Technology Centre (xmi@dstc.edu.au) e Request Task Force do XMI (xmi-rtf@emerald.omg.org)}, confirma-se esta situação (atualmente, no entanto, a compatibilidade parece ser maior do que na época em que o teste foi feito).
+
+
+
+\subsection{Persistência utilizando banco de dados}
+
+A necessidade por pesquisa dentre os casos de uso e pontos de vista do sistema tornam a utilização de persistência nativa do Java, baseada em serialização em arquivo, inadequada: a velocidade seria baixa, o acesso concorrente seria complexo. Após uma extensa pesquisa, descobriu-se que o banco de dados PostgreSQL possuia mecanismos de serialiação compatíveis com o Java, porém armazenando os dados em sua base dados. Aliando a isto a possibilidade de criar um Corba Query Service utilizando este sistema de banco de dados, qualquer tipo de pesquisar a ser efetuada torna-se muito mais rápida e prática.
+
+Primeiro, necessita-se de uma explicação sobre o PostgreSQL. Ele é um banco de dados gratuito, com código fonte disponível, licenciado segundo uma licença compatível com BSD. Trata-se de um banco objeto-relacional.
+
+No entanto, somente estas características não possilitam a serialização. Necessita-se de um mecanismo que possibilita armazenar as referências a objetos que encontramos nos objetos Java. Felizmente o PostgreSQL permite isso, criando tabelas nas quais os campos podem ser nomes de outras tabelas. Por exemplo:
+
+\begin{verbatim}
+	test=> create table users (username name,fullname text);
+	CREATE
+	test=> create table server (servername name,adminuser users);
+	CREATE
+	test=> insert into users values ('peter','Peter Mount');
+	INSERT 2610132 1
+	test=> insert into server values ('maidast',2610132::users);
+	INSERT 2610133 1
+	test=> select * from users;
+	username|fullname      
+	--------+--------------
+	peter   |Peter Mount   
+	(1 row)
+
+	test=> select * from server;
+	servername|adminuser
+	----------+---------
+	maidast   |  2610132
+	(1 row)
+\end{verbatim}
+
+Na tabela "server", como pode ser notado, criou-se uma referência ao usuário peter da tabela "users" (que possui um número de identificação 2610132). Agora que é possível guardar, além de atributos como String, int, double, referências para outros objetos. Foi criado um novo componente para o microkernel, o DBPersistenceHandler, que extende a classe org.postgresql.util.Serialize, habilitando o microkernel a utilização de tal mecanismo de serialização. 
+
+
+\subsection{Extensão da linguagem UML}
+
+As extensões da linguagem UML utilizadas na definição de requisitos são implementadas através do uso de esteriótipos e tagged values. Estes mecanismos de extensão da UML, definidos no pacote ExtensionMechanisms do Foundation Packages, foram feitos justamente para acomodar possíveis dados extras necessários aos modelos e processos de software. Outra possibilidade para acomodar as necessidades deste projeto seria criar uma extensão do metamodelo da UML, definindo as novas metaclasses e metaconstrutores através da MOF. Porém, o uso dos mecanismos de extensão da UML são suficientes para atender as necessidades do projeto.
+
+No pacote Extension Mechanisms da UML, temos definidos duas novas metaclasses: Stereotype, TaggedValue. Além disso, temos a metaclasse Constraint, do pacote Core. Estes mecanismos podem ser aplicados a qualquer ModelElement ou derivado deste, possuindo um valor semântico maior que qualquer outro mecanismo da UML (especialização, relacionamentos).
+
+Um esteriótipo é uma metaclasse que altera a elemento do modelo de maneira que ele pareça ser uma instância de um metamodelo virtual (virtual porque ele não é definido da UML, mas parece que é). Pode haver, no máximo, um esteriótipo associado a um modelo de elemento. Todos os tagged values e restrições aplicados em um esteriótipo também são válidos no modelo de elemento, atuando assim como uma pseudo metaclasse descrevendo o o elemento. Outra característica interessante é que pode-se derivar um esteriótipo de outro esteriótipo (um esteriótipo é uma especialiação de modelElement).
+
+Tagged values são propriedades arbitrárias associadas a um elemento do modelo, representadas por uma tupla (nome,valor). Pode-se associar qualquer número de tagged values a um elemento, salvaguardando a restrição destas serem únicas quanto a este.
+
+Constraints permitem que sejam definidas restrições semânticas ao elemento do modelo, utilizando para isto uma linguagem, tal como a OCL (que foi feita especificadamente para isto), uma linguagem de programação, notação matemática, linguagem natural. Geralmente utilizam-se linguagens definidas formalmente, possibilitando assim uma aplicação deste regras através de ferramentas. Uma restrição pode possuir o atributo "body" e a associação "constrainedElement". O corpo "body" pode possuir uma expressão booleana que define a restrição. Esta expressão sempre deve ser verdadeira para instâncias de elementos com esta restrição quando o sistema está estável, ou seja, não está sendo feita nenhuma operação no sistema. Caso contrário, é dito que o modelo está mal formado. A associação "constrainedElement" é uma lista ordenada dos elementos do modelo sujeitos à uma restrição. Se o elemento em questão for um esteriótipo, todos os elementos que possuem aquele esteriótipo também estarão sujeitos a restrição.
+
+Estudados os mecanismos de extensão da UML, definiu-se, então, as extensões da UML a serem utilizadas a fim de representarmos nossa linguagem. Escolheu-se pela utilização de tagged values. Para os atores, foram definidos os seguinte:
+
+\begin{itemize}
+	\itemsep=-.3mm
+	\item isDistributed
+	\item isParallel
+	\item isExclusive
+\end{itemize}
+
+Para os casos de uso:
+
+\begin{itemize}
+	\itemsep=-.3mm
+	\item isSequential
+	\item isDistributed
+\end{itemize}
+
+E, finalmente, para os relacionamentos:
+
+\begin{itemize}
+	\itemsep=-.3mm
+	\item isSequential
+	\item isParallel
+\end{itemize}
+
+Uma questão observada durante a pesquisa realizada sobre UML foi a complexidade da linguagem. Esta questão já fora levantada inclusive pelo grupo que desenvolve a UML, a OMG, que, para sua próxima grande versão, a 2.0, pretende reduzir tal complexidade. Observou-se em listas de discussões sobre o assunto que, inclusive, diversas ferramentas estão utilizando modelos ligeiramente incompatíveis, o que acaba prejudicando o esforço de uma implementação completa da UML. Por isso, optou-se por guardar os dados inerentes aos níveis mais altos e somente aqueles mais utilizados.
+
+\begin{figure}[!htb]
+	\label{relacionamento:mdsodi:uml}
+	\centering
+	\subfigure[Relacionamento entre casos de uso]{\includegraphics{relacionamento.png}}
+	\hspace{.5cm}
+	\subfigure[Relacionamento entre casos de uso paralelos]{\includegraphics{relacionamentoparalelo.png}}
+	\caption{Representação dos relacionamentos}
+\end{figure}
+
+\begin{figure}[!htb]
+	\label{ator:mdsodi:uml}
+	\centering
+	\subfigure[Ator exclusivo]{\includegraphics{atorexclusivo.png}}
+	\hspace{.5cm}
+	\subfigure[Ator paralelo]{\includegraphics{atorparalelo.png}}
+	\hspace{.5cm}
+	\subfigure[Ator distribuído]{\includegraphics{atordistribuido.png}}
+	\hspace{.5cm}
+	\subfigure[Ator paralelo e distribuído]{\includegraphics{atorparalelodistribuido.png}}
+	\caption{Representação dos atores}
+\end{figure}
+
+\begin{figure}[!htb]
+	\label{casouso:mdsodi:uml}
+	\centering
+	\subfigure[Caso de uso sequencial]{\includegraphics{casousosequencial.png}}
+	\hspace{.5cm}
+	\subfigure[Caso de uso distribuído]{\includegraphics{casousodistribuido.png}}
+	\caption{Representação dos casos de uso}
+\end{figure}
+
+
+
+\section{Resultados e Discussão}
+
+
+\subsection{Análise das diversas técnicas estudadas}
+
+Como pode ser notado, foi dada uma ênfase em abordagens que evitassem um alto grau de formalismo. Não que sua aplicação não seja válida, esta escolha se deve, principalmente, ao fato de sistemas distribuídos serem, geralmente, de grande porte, o que dificultaria sua definição de maneira exata e sem ambiguidade em todos os aspectos, o que torna difícil o emprego de tais técnicas.
+
+Implementar uma ferramenta que automatize a definição de requisitos, de acordo com a metologia MDSODI, utilizando apenas uma das abordagens estudadas, talvez fosse insuficiente, para não dizer um desperdício. Por exemplo, a idéia de seleção de requisitos com base em conhecimento aplicada a pontos de vista permite a determinação de prioridades de maneira fácil e transparente, algo muito desejável em um sistema no qual teremos um universo de atores muitos distintos que geram uma quantidade impressionante de requisitos. Por mais que se queira, é impossível atender as necessidades de todos. Deve-se, portanto, se concentrar no foco do problema e, na medida do possível, atender as outras necessidades de menor prioridade.
+
+A utilização de padrões de casos de uso permite casar modelos de projetos diferentes. Esta possibilidade de reuso tão prematura permitiria o reaproveitamento de arquiteturas, a descoberta de requisitos que tinham sido esquecidos. No caso de sistemas desenvolvidos com base em casos de uso (utilizando o Unified Process, por exemplo), o nível de reaproveitamento seria ótimo. No entanto, no artigo em que se propõe a utilização de tal técnica, a mesma é implementada através de um pequeno sistema especialista. Provavelmente, nos sistemas objetivados pela ferramenta proposta neste trabalho de graduação, os modelos de caso de uso com que iremos nos deparar serão muito grandes ou com um nível de complexidade tal que impediria a fácil utilização de uma solução como fora utilizada. O ideal seria a identificação automática deste, o que tornaria a complexidade da ferramenta um pouco além do esperado.
+
+Temos na tabela abaixo uma breve comparação das diferentes técnicas analisadas. A técnica de ponto de vista se destaca não tendo nenhum ponto negativo. Todas as restantes possuem algumas características não satisfatórias, dificultando um pouco a escolha de uma técnica complementar. Considerando a utilização de pontos de vista e a consequente necessidade de filtrar os inúmeros pontos de vistas existentes (e visões geradas), a REQAV se destaca, podendo aplicar seus conceitos em um processo rápido e eficiente para o requerido processo.
+
+\begin{table}[!htb]
+	\label{resultados:comparacaolinguagens}
+	\centering
+	\small
+	\begin{tabular}{|p{2.5cm}|c|c|c|c|}
+		\hline
+		\textbf{Técnica} & \textbf{Abrangência}	& \textbf{Usabilidade} & \textbf{Implementabilidade} & \textbf{Disseminação} \\
+		\hline
+		\hspace{0pt}Ponto de Vista			& Boa		& Boa		&Boa	& Muito Boa	\\
+		\hline
+		REQAV						& Boa		& Razoável	&Ruim	& Boa	\\
+		\hline
+		\hspace{0pt}Padrões na Construção de Cenários		& Razoável	& Boa		&Ruim	& Boa	\\
+		\hline
+		\hspace{0pt}Padrões de Reutilização de Requisitos		& Boa		& Ruim		&Boa	& Boa	\\
+		\hline
+		\hspace{0pt}Utilização de diferentes meios de comunicação	& Boa		& Boa		&Ruim	&Boa	\\
+		\hline
+	\end{tabular}
+	\caption{Comparação das técnicas estudadas.}
+\end{table}
+
+
+
+\subsection{Criação de um sistema gerenciador de conhecimento}
+
+O estudo sobre os diversos sistemas de gerenciamento de conhecimento, em especial o kMail, sugere a importância da adoção de sistemas que utilizem dados de uma base de conhecimento. Na ferramenta em questão, esbarram-se em alguns problemas. Utilizar a base de conhecimento para decidir que requisitos escolher quando houver conflitos ou até mesmo para adicionar novos requisitos de acordo com os já existentes seria extremamente complexo devido a subjetividade dos requisitos. 
+
+Uma melhor abordagem seria utilizar o sistema no processo de análise dos requisitos, gerando sugestões ou críticas durante a manipulação dos casos de uso, por exemplo. No entanto, esse modo de aplicação deve sofrer melhor pesquisa. A ferramenta utilizada neste projeto para modelar a ferramenta, o ArgoUML, faz uma análise em tempo de execução nestes moldes. Algumas críticas são interessantes, mas o problema é que a quantidade total é muito grande, ultrapassando a casa das centenas. É claro, a ferramenta não tem conhecimento dos perfis dos usuários, o que torna a técnica menos eficiente. Mas, num sistema interativo, mesmo empregando técnicas mais apuradas, seria um problema. Uma melhor solução seria a utilização de agentes que verificariam os produtos gerados, procurando por problemas e notificando os responsáveis. Estes agentes poderiam ser acionadas ou ao desejo do responsável (com o objetivo de ver os resultados da verificação imediatamente) ou então aleatoriamente, em períodos de inatividade do sistema.
+
+Optou-se, por fim, em não empregar sistemas gerenciadores de conhecimento na ferramenta, porém projetando-a de maneira que o mesmo possa ser feito em trabalhos futuros.
+
+
+\subsection{Proposta de Processo de Engenharia de Requisitos}
+
+
+A ferramenta, sem uma processo de engenharia de software, não tem valor. Por isso, propõe-se o seguinte processo de engenharia de software, referente a engenharia dos requisitos:
+
+\begin{enumerate}
+	\itemsep=-.3mm
+	\item A primeira etapa consistem em adquirir as visões dos stakeholders sobre o sistema. As visões são inseridas no sistema através de um formulário na Internet, feito em Java, que se comunica com o Servidor de Visões. Esta inserção pode ser feita também através da ferramenta que o engenheiro está utilizando. Observe que as visões podem conter vários anexos. Exemplos úteis seriam um documento de análise de requisitos de projetos anteriores, uma entrevista digitalizada. A identificação do tipo de dado anexado é feito através do seu tipo MIME, que deve ser informado no momento da criação da visão. Com base nesta informação, pode-se utilizar uma programa do sistema corrente para acessar este dado.
+	\item O próximo passo é a validação e qualificação das visões, passo este muito importante visto o volume de visões que um sistema pode conter. Utilizando a ferramenta, escolhe-se um critério e um mecanismo de qualificação. Esta é, na verdade, uma abstração. O mecanismo de validação pode ser uma consulta SQL, um motor de inferência, regras estáticas.
+	\item Escolhe-se, em seguida, as visões consideradas mais relevantes pelo sistema e faz-se a análise das mesmas, extraindo seus casos de uso, atores, requisitos não funcionais, criando diagramas de caso de uso.
+	\item Enfim temos uma parte crítica do processo, a resolução de conflitos. A ferramenta analisa os diversos casos de uso, atores e seus relacionamentos e lista os pontos em que há conflito. A solução destes envolverá a interação com o usuário. Graças as visões, podemos rastrear as visões que originaram os casos de uso e atores, podendo tirar dúvidas e, se necessário, interagir com os usuários, buscando o fim do conflito. Em métodos anteriores, este passo seria muito complicado, geralmente não há esta preocupação com rastreabilidade dos dados neste nível, visto o volume de dados usualmente obtidos.
+\end{enumerate}
+
+O processo, em si, não segue esta linearidade. Existe uma dependência de cada etapa com sua anterior, mas uma vez cumprida todas as etapas, as mesmas podem ser repetidas em qualquer ordem.
+
+
+
+\subsection{Framework veryhot}
+
+A necessidade de criação de diagramas de casos de uso atendendo a notação utilizada neste trabalho e a possível futura necessidade de novos diagramas do mesmo tipo motivou a criação de uma pacote que facilite esta tarefa. Seu nome é veryhot. Na verdade, ele é uma evolução de um pacote Java desenvolvido em \cite{eyanaga:1997}. Fora feita uma reengenharia do mesmo, simplificando-o (diminuição de números de classes) sem perder suas características originais, facilitano futura manutenção.
+
+O sistema possui quatro componentes principais:
+
+\begin{itemize}
+	\itemsep=-.3mm
+	\item Figure: Figura que pode ser manipulada pelo pacote.
+	\item DrawingPanel: Responsável por armazenar as figuras e desenhá-las adequadamente.
+	\item Tool: Ferramentas que criam e manipulam as figuras contidas no DrawingPanel.
+	\item ObserverArgument: Utilizado para repassar as alterações ocorridas em uma figura entre os diversos objetos que a observam.
+\end{itemize}
+
+Nos diagramas a seguir, pode-se observar a estrutura do pacote:
+
+\begin{figure}[!htb]
+	\label{veryhot}
+	\centering
+	\includegraphics{veryhot1.png}
+	\caption{Diagrama de classes - Figures, DrawingPanel, ObserverArgument (package veryhot)}
+\end{figure}
+
+\begin{figure}[!htb]
+	\label{veryhot.tools}
+	\centering
+	\includegraphics{veryhot2.png}
+	\caption{Diagrama de classes - Tool - (package veryhot.tool)}
+\end{figure}
+
+Tendo conhecimento do pacote, é possível enumerar alguma de suas características principais:
+
+\begin{itemize}
+	\itemsep=.3mm
+	\item Simplicidade: Para criar novas figuras (um Actor, por exemplo), basta extender o VectorFigure ou criar uma nova classe que especialize a Figure. Muito provavelmente só necessitará de alterações o método paint().
+	\item Versatilidade das ferramentas: Elas podem modificar as figuras e não precisam se preocupar com o redesenho da figura, podendo o desenvolvedor concentrar-se na funcionalidade das ferramentas e não na apresentação da figuras que manipula.
+	\item Sistema de notificação avançado: A comunicação sobre mudanças nas figuras é assíncrono, baseado em eventos, obtendo um desempenho bom ao mesmo tempo que é de fácil implementação.  A utilização do ObserverArgument permite passar informações complexas entre os objetos.
+	\item Documentação: este framework está muito melhor documentado que a versão utilizada como base. Unindo a reengenharia com uma documentação mais detalhada, sua utilização ficou mais simples.
+\end{itemize}
+
+
+
+\subsection{Microkernel}
+
+Novamente, reutilizando soluções criadas em trabalhos anteriores, decidiu-se por utilizar um microkernel para implementar os serviços básicos requeridos por cada serviço. As modificações feitas em relação ao anterior foi a remodelação do sistema quanto ao armazenamento de objetos, retirando componentes como Cache e PersistenceManager (responsáveis pelos serviços de cache e persistência), substituindo-os por um novo componente, MemoryManager, que armazena os objetos. Esta solução permite a utilização do sistema concorrentemente, ao contrário do sistema anterior. Uma possível futura melhoria seria a implementação de um sistema de cache que utiliza-se recursos avançados do Java para controle de objetos (utilizando-se das classes existentes em java.lang.ref).
+
+O mecanismo de memória, MemoryManager, é uma interface para qual temos duas implementações: uma que armazena os objetos utilizando mecanismos de serialização para arquivo e outro que serializa para um banco de dados. A serialização para arquivo é a que temos no Java; a para banco de dados utiliza-se de recursos específicos do banco de dados PostgreSQL, já explicadas anteriormente.
+
+Uma importante característica do MemoryManager é sua capacidade de selecionar objetos baseados em uma regra, característica esta necessária para a implementação da avaliação das visões, pontos de vistas e requisitos. Este mecanismo poderia, com as características atuais do microkernel, ser implementado a parte, como um outro serviço. No entanto, a performance de tal solução seria muito reduzida, optando-se portanto para este mecanismo.
+
+\begin{figure}[!htb]
+	\label{microkernel}
+	\centering
+	\includegraphics{microkernel.png}
+	\caption{Diagrama de classes - Microkernel (package microkernel)}
+\end{figure}
+
+
+\subsection{Arquitetura do Sistema}
+
+Em linhas gerais, a arquitetura do sistema pode ser descrita como mostrado na figura abaixo. A ferramenta, CoolCase, interage com todos os outros servidores:
+
+\begin{itemize}
+	\itemsep=-.3mm
+	\item EntityServer: Contém todas as entidades referidas no sistema. Por exemplo, toda visão está relacionada com uma entidade.
+	\item RequirementServer: Mantém um registro com os requisitos do sistema.
+	\item UseCaseServer: Casos de uso.
+	\item ActorServer: Atores.
+	\item UseCaseModelServer: Armazena todos os relacionamentos entre casos de uso e atores em um sistema.
+	\item UseCaseDiagramServer: Guarda diagramas de caso de uso.
+	\item ViewServer: Gerencia as visões.
+\end{itemize}
+
+\begin{figure}[!htb]
+	\label{arquitetura}
+	\centering
+	\includegraphics{arquitetura.png}
+	\caption{Arquitetura do sistema}
+\end{figure}
+
+
+\subsection{Componentes do sistema}
+
+O sistema manipula sete tipos de componentes: entidades, requisitos, casos de uso, atores, modelos de caso de uso, diagramas de caso de uso e visões, todos eles armazenados e gerenciados por seus respectivos servidores. Em \ref{componentes} pode-se observá-los. A fim de deixar o diagrama mais claro, foram omitidas o relacionamento que denota a especialização das classes em relação a classe Artefact.
+
+\begin{figure}[!htb]
+	\label{componentes}
+	\centering
+	\includegraphics{componentes.png}
+	\caption{Componentes do sistema}
+\end{figure}
+
+\subsubsection{Entidades}
+
+Toda visão está relacionada uma entidade, garantindo assim uma certa rastreabilidade. Mas o mais importante é a capacidade de avaliar as visões de acordo com as entidadas que as criaram. Para isso, armazenamos informações tais com papel desempenhado no ambiente do sistema sendo desenvolvido (role), habilidades, etc. Estes dados são armazenados em uma estrutura no formato (tipo do atributo, nome do atributo, valor). Toda entidade também possui um identificador único, no caso uma palavra.
+
+No diagrama, pode ser notado que Entity é, na verdade, abstrata. A questão é que podemos ter entidades reais ou virtuais, tais como agentes inteligentes. Toda entidade deve possuir um mecanismo para ser notificada sobre alguma requisição (por exemplo, solicitar que a pessoa compareça a empresa para esclarecimentos sobre um determinado requisito).
+
+
+\subsubsection{Requisitos}
+
+Os requisitos são armazenados como um texto contendo referências para diversos atores, casos de uso e seus respectivos relacionamentos. De certa maneira, é o ponto no sistema em que o todo produzido durante o processo de engenharia de requisito é resumido, possibilitando uma rápida procura por algum requisito, avaliar o seu estado.
+
+
+\subsection{Casos de uso e atores}
+
+Estes seguem a estrutura definida na UML 1.3, contendo as restrições (em alguns aspectos) e melhorias (para suportar a descrição de características de sistemas distribuídos) conforme explicado em.
+
+
+\subsection{Modelo de caso de uso e diagramas de caso de uso}
+
+Os modelos de caso de uso são compostos pelos relaconamentos entre os casos de uso e atores. Na verdade, todo caso de uso e ator de um determinado projeto está incluído em um modelo de caso de uso. No entanto, visto a existência de servidores para estes, armazena-se somente seus relacionamentos, buscando os dados necessários nos servidores conforme requisitado.
+
+Os diagramas de caso de uso retratam uma pequena parte do modelo de caso de uso. Alterações feitas em diagramas são refletidas no modelo e, portanto, deixá-lo inconsistente.
+
+
+\subsection{Visões}
+
+As visões são o meio de entrada dos dados necessários para a construção dos requisitos. Seus atributos são:
+
+\begin{itemize}
+	\itemsep=-.3mm
+	\item Assunto
+	\item Grau de importância (do ponto de vista da entidade que a enviou);
+	\item Anexos
+	\item Foco (a que componente ou aspecto específico esta visão está tratando)
+\end{itemize}
+
+
+
+\section{CoolCase}
+
+Denominou-se CoolCase a parte da ferramenta com a qual o engenheiro irá trabalhar. Neste serão criados e editados os diagramas, sendo possivelacessar, através dela, as visões, requisitos, enfim, todos os elementos citados neste projeto. Em \ref{coolcase:diagramaclasse} pode-se observar o diagrama de classes da ferramenta. Como todo o resto do sistema, fora implementada em Java.
+
+\begin{figure}
+	\centering
+	\label{coolcase:diagramaclasse}
+	\includegraphics{coolcase.png}
+	\caption{Diagrama de classe da CoolCase}
+\end{figure}
+
+Em \ref{coolcase:prototipo}, pode-se visualizar um protótipo da ferramenta em execução.
+
+\begin{figure}
+	\centering
+	\label{coolcase:prototipo}
+	\includegraphics{prototipo.png}
+	\caption{Protótipo da ferramenta em funcionamento}
+\end{figure}
+
+
+
+\section{Conclusão}
+
+A área de engenharia de requisitos ainda está em suas fases iniciais de desenvolvimento, ao menos quando comparada a outras áreas da engenharia de software. Sua proximidade com o ser humano, conflitando com a exatidão requerida pela máquina, torna o processo muito complexo, surgindo, portanto, a necessidade do desenvolvimento de técnicas e ferramentas para torná-lo mais eficiente. Várias técnicas foram estudadas neste projeto, algumas fugindo do escopo usual de engenharia (por exemplo, a técnica que aborda os meios de comunicação para com o usuário) mas que acabam desempenhando um papel importante no processo. Em geral, observou-se que técnicas que utilizam-se mais dos dados sobre os stakeholders, valorizando o aspecto "informal" (formal o suficiente para a máquina e informal - natural - para o ser humano) possuem uma aceitação crescente na última década, muito provavelmente por causa da mudança do enfoque do software, cada vez mais destinada a um usuário comum, que não possui conhecimento para descrever formalmente um problema, desejando apenas a solução para o seu problema. A necessidade de lançar produtos ao mercado rapidamente também favorece esta técnicas, cuja facilidade de aplicação é muito superior a métodos de especificação formais de requisitos.
+
+As técnicas abordadas, em especial a utilização de pontos de vista e a avaliação de requisitos, conseguem melhorar o processo de engenharia de requisitos. A associação do conhecimento sobre as entidades permite que o engenheiro entenda melhor as intenções do stakeholder e, na pior das hipóteses, vai garantir uma interação mais tranquila e rápida entre estes caso seja necessário consultá-los para resolução dos conflitos. A avaliação da importância das visões permitem filtrar os dados, evitando que o tempo caro dos engenheiros sejam dispensados em partes de pouca significância para o software sendo desenvolvido. O problema desta técnica são os filtros que serão utilizados: seus critérios devem ser justos, tentar atender o mínimo de visões que representem o máximo do  domínio da aplicação. Os mecanismos apresentados no trabalho, através de consultas simples, obviamente são insatisfatórios. Modelos que utilizem mecanismos de inferência avançados e regras complexas e abrangentes devem ser desenvolvidos. Um grande problema neste aspecto é que o volume de dados gerados no processo de engenharia de requisitos é muito grande, causando que muitos recursos computacionais sejam dispendidos, tornando inviável sua utilização. O desenvolvimento de um sistema, baseado em banco de dados, com a flexibilidade dos sistemas inteligentes atuais, é necessária para o sucesso da aplicação da técnica em grande escala.
+
+A complexidade da ferramenta superou a expectativa, atrasando o desenvolvimento da ferramenta que não se encontra com todas suas funcionalidades implementadas. Consequentemente, não foi possível realizar os estudos de caso planejados. No entanto, toda o projeto da ferramenta encontra-se pronto, grande parte deste já codificado, o que torna possível a continuidade da ferramenta para futuras pesquisas.
+
+\nocite{bor:2000,cortes:2000,dia:2000,diaz:1999,fowler:1997,fowler:2000,gravena:2000,hahn:2000,huzita:1995,jacobson:2001,kmail:2000,knapik:1998,leary:1998,nist:2000,osiris:2000,pfaffenseller:2000,ridao:2000,sato:1994,schelebbe:1995,sommerville:1996,sommerville:1997,souza:1998,spool:2000,webcadet:2000,wooldridge:2000,xml:1998,leite:1998,zanlorenci:2000}
+
+\section{Bibliografia}
+
+\bibliographystyle{abnt-alf}
+\bibliography{pic}
+
+\section{Anexos}
+
+\end{document}

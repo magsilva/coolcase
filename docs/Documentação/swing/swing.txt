@@ -1,0 +1,21 @@
+Java Swing
+
+A biblioteca Java Swing faz parte de um conjunto de bibliotecas do Java denominados Java Fundation Class (JFC). O JFC, como um todo, é a solução que a SUN criou para demonstrar que a linguagem é viável em sistemas de maior parte. Ela é composta por 5 bibliotecas: accessibility, awt, swing, drag n'drop e java2d (e, quem sabe, futuramente, até vejamos a inclusão de bibliotecas ainda em desenvolvimento tais como java3d).
+
+Na verdade, a SUN criou algo muito mais abrangente que o talvez esperado (ou pelo menos, comumente encontrado nas ferramentas atuais). São incorporados aspectos como acessibilidade (suporte a programas destinados a deficientes auditivos, visuais), uma completa separação dos dados e da maneira que ele é visto, facilidade de desenvolvimento, liberdade para alterar a visualização dos componentes, tudo isso sem esquecer a desde o início afirmada portabilidade do Java. Boa parte destas novidades se devem ao Swing.
+
+O Swing é uma biblioteca que usa a AWT (Abstract Windows Toolkit) como base. Esta última tinha muitos problemas de portabilidade por depender do sistema operacional em que está executando para desenhar sua interfaces, sistemas esses que não seguem um padrão. O Swing, então, usa os componentes mais básicos que o sistema operacional fornece, que são os quadros (frames), as janelas (windows) e as caixas de diálogo (dialog boxes), para os componentes da biblioteca. Esses componentes mais básicos são, na verdade, classes que extenderam classes do AWT. Por serem dependentes do sistema, nós denominados de Heavyweight componentes. Os outros componentes, feitos em Java, são classificados como Lightweight.
+
+Como todos os componentes do Swing são escritos em Java, independentemente onde eles são executados, temos os mesmos resultados (isso porque ao menos os elementos que o Swing usa como base são padrões). No entanto, isso pode ser meio lento para atividades muito intensivas de renderização na tela. Para programas que necessitam de maior performance, pode-se então utilizar o JNI (Java Native Interface), que permite que programas feitos em outras linguagens interajam com programas Java. Perde-se em portabilidade, ganha-se em desempenho, ao menos o desenvolvedor pode escolher entre o portável (somente o Swing) e o rápido (JNI), ao contrário de restringir todos à incerteza da AWT (que, talvez, ainda exista no Java apenas por questão de compatibilidade com versões anteriores do Java...).
+
+O Swing se baseia na arquitetura Model-View-Controller (Modelo-Visão-Controlador).
+
+O modelo guarda os dados de cada componente. Temos um modelo para cada tipo de componente. Por exemplo, o modelo de uma barra de rolagem teria a posição atual do marcador da barra, seus valores máximo e mínimo. Esses dados existem, seja este componente mostrado na tela ou não.
+
+A visão gera a imagem que representa o modelo na tela. Uma barra de rolagem no Windows pode ser desenhada de maneira diferente que no X Windows, por exemplo. Porém observe que o modelo é o mesmo.
+
+O controlador é quem vai ditar como os componentes vão reagir aos eventos (clicks do mouse, pressionar de teclas).
+
+Conforme dito acima, o Swing se baseia no MVC, mas não o implementa. Ao invés disso, ele usa usa variação deste, que denomina-se model-delegate. Nesta arquitetura, visão e controlador se fundem no que chamados de UI-delegate.
+
+Resumindo: todo componente Swing contém um modelo e um UI delegate. O modelo é responsável por manter informações sobre o estado do componente. O UI delegate é responsável por manter informações sobre como desenhar o componente na tela e a reagir aos vários eventos que se propagam através do componente.

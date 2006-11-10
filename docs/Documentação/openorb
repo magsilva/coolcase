@@ -1,0 +1,91 @@
+\subsubsection{OpenORB}
+
+O OpenORB é um CORBA Object Request Broker desenvolvido em Java e que atende a especificação CORBA 2.4.2. Ele se destaca por ser livre, prover uma série de serviços e extensões e possuir uma arquitetura modular. Esta última característica permite que o OpenORB seja configurado de maneira ótima aos requisitos da aplicação, tornando seu uso interessante num ambiente distribuído, com configurações dos mais variados tipos.
+
+As configurações são armazenadas em um único arquivo, OpenORB.xml, sendo seu conteúdo consistindo de um conjunto de propriedades, módulos e perfis. A localização deste arquivo pode ser, por ordem de prioridade:
+
+\begin{enumerate}
+	\item Valor da propriedade "config" do OpenORB.
+	\item Diretório determinado na propriedade "user.dir" do Java (geralmente o diretório no qual a aplicação Java foi iniciada).
+	\item Diretório determinado na propriedade "user.home" do Java.
+	\item Subdiretório "config" da propriedade "openorb.home". O openorb.home é, geralmente, um "diretório" dentro do pacote do OpenORB.
+\end{enumerate}
+
+O cabeçalho do arquivo de configuração consiste em uma especificação do tipo de documento XML e do DTD a ser utilizado na validação:
+
+\begin{verbatim}
+	<!DOCTYPE OpenORB PUBLIC "-//openorb.sf.net//OpenORB Config//EN" "http://openorb.sf.net/config/OpenORB.dtd">
+\end{verbatim}
+
+A seguir, temos a declaração do elemento raiz do arquivo de configuração, o OpenORB. Este elemento pode ter um atributo "profile" indicando o perfil padrão a ser utilizado:
+
+\begin{verbatim}
+	<OpenORB xmlns="http://openorb.sf.net/config" xmlns:xlink="http://www.w3.org/1999/xlink" >
+\end{verbatim}
+
+Finalmente, temos a configuração dos módulos a serem incorporados ao OpenORB. Cada declaração de módulo deve definir as propriedades do subsistema, o inicializador a ser utilizado e as dependências existentes. Observando o exemplo em ???, temos a definição de dois módulos: Teste1 e Teste2. Em Teste1 temos definidos inicializador, três propriedades e um conjunto de propriedades. O inicializador, definido em initilizator, é uma classe Java a ser executada por este módulo. As propriedades são bem simples, consistindo de um nome e seu respectivo valor. Um conjunto de propriedades determina um novo namespace, de nome Teste1 (atributo prefix), dentro do módulo. O módulo Teste2 possui três declarações de dependências, indicadas pelos elementos import. A primeira declaração é quanto ao módulo Teste1 e ele configura a propriedade Teste1.a para um valor específico. As outras duas declarações obtém os dados sobre os módulos a serem importados a partir de um endereço, podendo ser um arquivo disponível pela Internet, num servidor Http, ou um propriedade de sistema do Java.  
+
+\begin{verbatim}
+<module name="Teste1" initializator="coolcase.kernel.teste1" >
+	<property name="name" value="Teste1" />
+	<propertyset prefix="Teste1" />
+	<property name="Teste1.a" value="Valor de Teste1.a" />
+	<property name="Teste1.b" value="Valor de Teste1.b" />
+</module>
+
+<module name="Teste2" initilizator="coolcase.kernel.teste2" >
+	<property name="name" value="Teste2" />
+	<import module="Teste1" >
+		<property name="Teste1.a" value="Valor de Teste1.a alterado por Teste2" />
+	</import>
+	<import xlink:href="http://www.example.com/orb/cfg.xml#mod" />
+	<import xlink:href="${user.home}InitRef.properties#InitRef" />
+</module>
+\end{verbatim}
+
+Finalmente, tem-se a configuração dos perfis. Eles são um mecanismo para agrupar módulos e especificar configurações padrões para uma aplicação. Por exemplo, para a CoolCase, criou-se um perfil que configura o OpenORB adequadamente, preparando a execução do Interoperable Naming Service, Transaction Service, Trading Service e Persistent State Service. 
+
+\begin{verbatim}
+<profile name="coolcase">
+	<import profile="large"/>
+	<import module="chips"/>
+	<import module="sauce">
+		<property name="flavor" value="tobasco"/>
+	</import>
+</profile>
+
+<profile name="supercoolcase" extends="coolcase" >
+</profile>
+\end{verbatim}
+
+O perfil usado numa aplicação é o primeiro encontrado segundo o algoritmo abaixo:
+
+\begin{enumerate}
+	\item Procura-se por uma associação de nome "user.name" na seção "Associations" do arquivo de configuração do OpenORB;
+	\item O valor do atributo "profile" do elemento root "OpenORB" é usado se especificado;
+	\item O profile nomeado "default" é utilizado.
+\end{enumerate}
+
+Uma seção de associação é criada como um elemento filho do elemento raiz do arquivo de configuração do OpenORB. Esta seção pode conter várias associações, cada uma delas composta por dois atributos: user e profile. Veja abaixo um exemplo:
+
+\begin{verbatim}
+	<associations>
+		<association user="joe" profile="joes-profile" />
+		<association user="fred barney pebbles" profile="flintstones" />
+	</associations>
+\end{verbatim}
+		
+ 
+
+O NamingManager é utilizado para relacionar os objetos Corba a nomes, organizados de acordo com os projetos aos quais pertence e seu tipo. O padrão de nomenclatura é organizar objetos de um projeto em um único  "NamingContext". Por exemplo, em um ficticio projeto Aquarela, uma diagrama de caso de uso sobre uutilização de tintas texturizadas, o objeto seria identificado como "Aquarela/UseCaseDiagram/TexturedPaint". Caso este caso de uso seja reutilizado em outro projeto, teriamos um relacionamento adicional (por exemplo, "Guache/UseCaseDiagram/TexturedPaint").
+
+Em uma primeira implementação do NamingManager, utilizou-se o CORBA Naming Service implementado pelo OpenORB 1.2.1. Sua utilização é bem simples, bastando executar "java org.openorb.util.MapNamingContext -ORBPort=2001" para que o serviço seja utilizado. Apesar de sua facilidade de configuração e utilização, este serviço de nomes é transiente, portanto os nomes são perdidos quando o serviço é desativado. Esta característica não atenderia as necessidades da ferramenta, que necessita que estes dados sejam mantidos indefinidamente. 
+
+Outra solução foi então pesquisada, o Extended Interoperable Naming Service. Ele é o mesmo Naming Service acima mencionado, porém agora com persistência de dados. A implementação usada também foi a do OpenORB 1.2.1. Sua configuração é ligeiramente mais complexa devido a dependência ao Persistente State Service e Transaction Service:
+
+\enumerate
+	\item Primeiramente tem-se de alterar o arquivo de configuração do OpenORB. As instruções a seguir consideram as configurações padrões do OpenORB como ponto de partida. Caso elas já tenham sido alteradas, pode-se executar o comando setConfig.sh (OpenORB/config) para retomar as opções originais.
+	\item Copia-se o arquivo "TransactionService-1.2.1/config/ots.xml" para "OpenORB-1.2.1/config/ots.xml".
+	\item Executa-se o Interoperable Naming Service: java org.openorb.ins.Server -default. A configuração padrão do OpenORB conecta-se a porta 683 (TCP/IP), necessitando-se de direitos de administrador (root).
+	\item Executa-se o Transaction Service: java org.openorb.ots.Server -naming.
+	\item Inicie a aplicação com -ORBProfile=ots

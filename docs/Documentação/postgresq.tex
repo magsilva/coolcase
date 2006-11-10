@@ -1,0 +1,36 @@
+\subsection{Microkernel}
+
+O microkernel foi alterado, basicamente, no que se refere ao armazenamento de objetos. A versão anterior possuiu dois mecanismos para guardar objetos: a utilização de uma memória cache e um mecanismo de persistência. Este mecanismos não permitiam o acesso concorrente a um mesmo objeto. Utilizando-se os dois mecanismos juntos, podia-se até efetuá-lo, mas com ressalvas quanto a integridade dos dados. Por isto, neste versão do microkernel, foram adotadas várias mudanças, possibilitando assim a concorrência de acesso assim como um novo mecanismo de persistência, baseado na utilização de bancos de dados (mais especificadamente o PostgreSQL.
+
+[ falar sobre o novo modelo de memória ]
+
+\subsubsection{Persistência utilizando banco de dados}
+
+A necessidade por pesquisa dentre os casos de uso e pontos de vista do sistema tornam a utilização de persistência nativa do Java, baseada em serialização em arquivo, inadequada: a velocidade seria baixa, o acesso concorrente seria complexo. Após uma extensa pesquisa, descobriu-se que o banco de dados PostgreSQL possuia mecanismos de serialiação compatíveis com o Java, porém armazenando os dados em sua base dados. Aliando a isto a possibilidade de criar um Corba Query Service utilizando este sistema de banco de dados, qualquer tipo de pesquisar a ser efetuada torna-se muito mais rápida e prática.
+
+Primeiro, necessita-se de uma explicação sobre o PostgreSQL. Ele é um banco de dados gratuito, com código fonte disponível, licenciado segundo uma licença compatível com BSD. Trata-se de um banco objeto-relacional.
+
+No entanto, somente estas características não possilitam a serialização. Necessita-se de um mecanismo que possibilita armazenar as referências a objetos que encontramos nos objetos Java. Felizmente o PostgreSQL permite isso, criando tabelas nas quais os campos podem ser nomes de outras tabelas. Por exemplo:
+
+test=> create table users (username name,fullname text);
+CREATE
+test=> create table server (servername name,adminuser users);
+CREATE
+test=> insert into users values ('peter','Peter Mount');
+INSERT 2610132 1
+test=> insert into server values ('maidast',2610132::users);
+INSERT 2610133 1
+test=> select * from users;
+username|fullname      
+--------+--------------
+peter   |Peter Mount   
+(1 row)
+
+test=> select * from server;
+servername|adminuser
+----------+---------
+maidast   |  2610132
+(1 row)
+
+Na tabela "server", como pode ser notado, criou-se uma referência ao usuário peter da tabela "users" (que possui um número de identificação 2610132). Agora que é possível guardar as referências, falta apenas armazenar os tipos básicos do Java: in
+Foi criado um novo componente para o microkernel, o DBPersistenceHandler, que extende a classe org.postgresql.util.Serialize, que é 

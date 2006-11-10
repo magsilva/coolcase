@@ -1,0 +1,8 @@
+As you can tell from the agenda
+(http://www.celigent.com/omg/umlrtf/docs/agendas/U2WG_Agenda.htm) posted on
+the web, we expect the June 12 meeting to be dominated by work sessions
+related to the RFP draft. At present there is only one prepared presentation
+expected: "Recommendations to Improve the architecture of UML, MOF and XMI",
+presented by Steve Cook and Stuart Kent. If anyone else would like to
+schedule an appropriate prepared presentation, please let us know asap.
+

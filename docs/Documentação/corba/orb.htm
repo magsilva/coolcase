@@ -1,0 +1,107 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
+
+<HTML>
+
+<HEAD>
+	<TITLE>ORB</TITLE>
+	<LINK REV="Made" HREF="mailto:magsilva@din.uem.br">
+	<META NAME="Author" CONTENT="Marco Aurélio Graciotto Silva">
+	<META NAME="Keywords" CONTENT="corba,orb">
+	<META NAME="Generator" CONTENT="NoteTab Light 4.84 HTML4-strict.clb">
+</HEAD>
+
+<BODY>
+
+<h1>Object Request Broker - ORB</h1>
+
+<HR>
+
+
+<P>O ORB deve fornecer, por padrão, referências para o root POA, POA Current, Interface Repository e instâncias de Object Services. Estes últimos são configurados na inicialização do ORB (ORB_init). Os parâmetros são no seguinte formato:</P>
+<PRE>
+	-ORBInitRef &lt;ObjectID&gt;=&lt;ObjectURL&gt;
+</PRE>
+<P>O ObjectURL é uma string que pode ser transformado em uma referência a objeto através do CORBA::ORB::string_to_object. Seguem abaixo alguns exemplos de parâmetros de inicialização:
+<PRE>
+-ORBInitRef NameService=IOR:00230021AB...
+-ORBInitRef NotificationService=corbaloc::555objs.com/NotificationService
+-ORBInitRef TradingService=corbaname::555objs.com#Dev/Trader
+</PRE>
+
+<P>As referências do ORB podem ser acessadas através de dois comandos: 
+<pre>
+<STRONG>list_initial_services</STRONG>
+	typedef string ObjectId;
+	typedef sequence <ObjectId> ObjectIdList;
+	ObjectIdList list_initial_services ();
+
+<STRONG>resolve_initial_references</STRONG>
+	exception InvalidName {};
+	Object resolve_initial_references (in ObjectId identifier) raises (InvalidName);
+</PRE>
+
+<P>Com o primeiro nós encontramos todos os tipos de objetos que possuem referências (ou seja, estão disponíveis para uso). O segundo retorna a referência para utilizar o objeto especificado. Alguns ObjectIds reservados: RootPOA, POACurrent, InterfaceRepository, NameService, TradingService, SecurityCurrent, TransactionCurrent, DynAnyFactory, ORBPolicyManager, PolicyCurrent, NotificationService e TypedNotificationService.</P>
+
+
+
+
+
+ORB technology promotes the goal of object communication across machine, software, and vendor boundaries. The relevant functions of an ORB technology are 
+
+interface definition 
+location and possible activation of remote objects 
+communication between clients and object 
+
+
+<P>
+
+ORB Core" as the part of the ORB that provides the basic object representations (called object references) and the communication of requests through proxy objects. 
+
+------------------------------
+
+If an abnormal condition occurs during the performance of a request, an exception is
+returned. The exception may carry additional return parameters particular to that
+exception.
+The request parameters are identified by position. A parameter may be an input
+parameter, an output parameter, or an input-output parameter. A request may also
+return a single return result value, as well as the results stored into the output and
+input-output parameters.
+The following semantics hold for all requests:
+• Any aliasing of parameter values is neither guaranteed removed nor guaranteed to
+be preserved.
+• The order in which aliased output parameters are written is not guaranteed.
+• The return result and the values stored into the output and input-output parameters
+are undefined if an exception is returned.
+------------------------------
+
+Clients request services by issuing requests.
+The term request is broadly used to refer to the entire sequence of causally related
+events that transpires between a client initiating it and the last event causally associated
+with that initiation. For example:
+• the client receives the final response associated with that request from the server,
+• the server carries out the associated operation in case of a oneway request, or
+• the sequence of events associated with the request terminates in a failure of some
+sort. The initiation of a Request is an event.
+The information associated with a request consists of an operation, a target object, zero
+or more (actual) parameters, and an optional request context.
+
+
+----------------------------
+
+An Object Reference is the information needed to specify an object within an ORB.
+Both clients and object implementations have an opaque notion of object references
+according to the language mapping, and thus are insulated from the actual
+representation of them. Two ORB implementations may differ in their choice of Object
+Reference representations.
+The representation of an object reference handed to a client is only valid for the
+lifetime of that client.
+All ORBs must provide the same language mapping to an object reference (usually
+referred to as an Object) for a particular programming language. This permits a
+program written in a particular language to access object references independent of the
+particular ORB. The language mapping may also provide additional ways to access
+object references in a typed way for the convenience of the programmer.
+There is a distinguished object reference, guaranteed to be different from all object
+references, that denotes no object.
+
+</BODY>
+</HTML>
