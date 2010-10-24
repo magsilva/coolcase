@@ -7,19 +7,16 @@ package coolcase.casetool;
 import java.awt.*;
 import java.awt.event.*;
 import javax.swing.*;
-import java.util.*;
 import java.util.logging.*;
-import java.io.File;
 
 import coolcase.veryhot.*;
-import coolcase.veryhot.tool.Tool;
 
 import coolcase.casetool.tool.*;
 import coolcase.casetool.action.*;
 
 /**
 * Nosso programa principal
-* Isso aqui é apenas um sistema para teste...
+* Isso aqui ï¿½ apenas um sistema para teste...
 */
 public class Sistema extends JFrame {
 	JMenuBar mainMenuBar;
@@ -50,7 +47,7 @@ public class Sistema extends JFrame {
 		mainMenuBar = new JMenuBar();
 
 		/** 
-		Cria o menu de gerenciamento de cenários
+		Cria o menu de gerenciamento de cenï¿½rios
 		*/
 		menu = new JMenu("File");
 		menu.setMnemonic(KeyEvent.VK_F);
@@ -76,7 +73,7 @@ public class Sistema extends JFrame {
 
 
 		/** 
-		Cria o menu de edição
+		Cria o menu de ediï¿½ï¿½o
 		*/
 		menu = new JMenu("Edit");
 		menu.setMnemonic(KeyEvent.VK_E);
@@ -116,7 +113,7 @@ public class Sistema extends JFrame {
 	}	
 
 	/**
-	* Cria a barra de ferramentas para operações rápidas
+	* Cria a barra de ferramentas para operaï¿½ï¿½es rï¿½pidas
 	*/
 	private void createOperationsToolBar() {
 		operationsToolBar = new JToolBar( SwingConstants.HORIZONTAL );
@@ -125,37 +122,37 @@ public class Sistema extends JFrame {
 		operationsToolBar.setFloatable( false );
 
 		//New scenario button
-		button = new JButton( new ImageIcon( "coolcase" + File.separator + "casetool" + File.separator + "image" + File.separator + "new.gif" ) );
+		button = new JButton( new ImageIcon(Sistema.class.getResource("/images/new.gif")));
 		button.setToolTipText( "New" );
 		operationsToolBar.add( button );
 
 		//Open existing scene button
-		button = new JButton( new ImageIcon( "coolcase" + File.separator + "casetool" + File.separator + "image" + File.separator + "open.gif" ) );
+		button = new JButton( new ImageIcon(Sistema.class.getResource("/images/open.gif" )) );
 		button.setToolTipText( "Open" );
 		operationsToolBar.add( button );
 
 		// Save active scene button
-		button = new JButton( new ImageIcon( "coolcase" + File.separator + "casetool" + File.separator + "image" + File.separator + "save.gif" ) );
+		button = new JButton(new ImageIcon(Sistema.class.getResource("/images/save.gif")));
 		button.setToolTipText( "Save" );
 		operationsToolBar.add( button );
 
 		//Copy selected objects button
-		button = new JButton( new ImageIcon( "coolcase" + File.separator + "casetool" + File.separator + "image" + File.separator + "copy.gif" ) );
+		button = new JButton( new ImageIcon(Sistema.class.getResource("/images/copy.gif" ) ));
 		button.setToolTipText( "Copy" );
 		operationsToolBar.add( button );
 
 		//Cut selected objects button
-		button = new JButton( new ImageIcon( "coolcase" + File.separator + "casetool" + File.separator + "image" + File.separator + "cut.gif" ) );
+		button = new JButton( new ImageIcon(Sistema.class.getResource("/images/cut.gif")));
 		button.setToolTipText( "Cut" );
 		operationsToolBar.add( button );
 
 		//Paste transfer area objects button
-		button = new JButton( new ImageIcon( "coolcase" + File.separator + "casetool" + File.separator + "image" + File.separator + "paste.gif" ) );
+		button = new JButton( new ImageIcon(Sistema.class.getResource("/images/paste.gif")));
 		button.setToolTipText( "Paste" );
 		operationsToolBar.add( button );
 
 		//Help button
-		button = new JButton(new ImageIcon( "coolcase" + File.separator + "casetool" + File.separator + "image" + File.separator + "help.gif"));
+		button = new JButton(new ImageIcon(Sistema.class.getResource("/images/help.gif")));
 		button.setToolTipText("Help");
 		operationsToolBar.add(button);
 	}
@@ -175,7 +172,7 @@ public class Sistema extends JFrame {
 		ManipulationAction manipulationAction = new ManipulationAction( drawingPanel, manipulationTool );
 		AssociationAction associationAction = new AssociationAction( drawingPanel, associationTool );
 		
-		// A barra de ferramenta será na vertical e não poderá flutuar na tela 
+		// A barra de ferramenta serï¿½ na vertical e nï¿½o poderï¿½ flutuar na tela 
  		drawingToolBar = new JToolBar( SwingConstants.VERTICAL );
 		drawingToolBar.setFloatable( false );
 		drawingToolBar.add( sequentialUseCaseAction );
@@ -191,7 +188,7 @@ public class Sistema extends JFrame {
 	}
 
 	/**
-	* Método privado utilizado para organizar a criação das coisas...
+	* Mï¿½todo privado utilizado para organizar a criaï¿½ï¿½o das coisas...
 	*/
 	private void createComponents() {
 		createMenu();
