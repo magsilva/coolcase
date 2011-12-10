@@ -15,7 +15,7 @@ import coolcase.veryhot.tool.Tool;
 * This is the root of the framework. The ideia is that the figures stay at this JPanel. The main
 * feature of the DrawingPanel is its tools support.
 */
-public class DrawingPanel extends JPanel implements Observer, Printable {
+public class DrawingPanel extends JPanel implements Observer, Printable, Runnable {
 
 	/**
 	* The tool being used.
@@ -23,12 +23,12 @@ public class DrawingPanel extends JPanel implements Observer, Printable {
 	protected Tool tool;
 
 	/**
-	* The list that keeps the figures in the DrawingPanel. This _has_ to beimproved to a somehow better
+	* The list that keeps the figures in the DrawingPanel. This _has_ to be improved to a somehow better
 	* structure. One ideia is keep a BTree of the figures sorted by figure draw priority (a TreeMap) and
 	* a BTreeSet sorted by figura name (TreeSet) in just one new object (a figuresCollection, for
 	* example).
 	*
-	* Currently it's used the figures's OID (or whatever is returned with its toString()'s method) as key.
+	* Currently it uses the figures's OID (or whatever is returned with its toString()'s method) as key.
 	*/
 	protected TreeMap figures;
 
@@ -270,7 +270,29 @@ public class DrawingPanel extends JPanel implements Observer, Printable {
 		}
 	}
 
+	/**
+	 * Avoids flicking.
+	 */
+	public void update(Graphics g) {
+		paint(g);
+	}
+	
 	public int print( Graphics g, PageFormat format, int numPage ) {
-		return 0;
+		if (numPage >= 0) {
+			return Printable.NO_SUCH_PAGE;
+		}
+		
+		paintComponent(g);
+		
+		return Printable.PAGE_EXISTS;
+	}
+
+	@Override
+	public void run() {
+		/*
+		while (true) {
+			repaint();
+		}
+		*/
 	}
 }

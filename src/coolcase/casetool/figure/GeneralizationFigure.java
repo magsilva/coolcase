@@ -4,7 +4,6 @@ import java.awt.*;
 import java.awt.event.*;
 
 import coolcase.veryhot.Figure;
-import veryhot.*;
 
 /**
 * Represents the generalization relationship.

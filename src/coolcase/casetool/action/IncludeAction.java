@@ -13,7 +13,7 @@ public class IncludeAction extends AbstractAction {
 
 	IncludeTool includeTool;
 
-	public ActorAction(DrawingPanel dp, IncludeTool it)
+	public IncludeAction(DrawingPanel dp, IncludeTool it)
 	{
 		super("Actor Action", new ImageIcon(AbstractAction.class.getResource("images/include.gif")));
 		drawingPanel = dp;

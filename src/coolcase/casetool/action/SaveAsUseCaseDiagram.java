@@ -1,2 +1,4 @@
-public class SaveAsUseCaseDiagram extends Save {
+package coolcase.casetool.action;
+
+public class SaveAsUseCaseDiagram extends SaveUseCaseDiagram {
 }
