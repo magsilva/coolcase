@@ -235,9 +235,15 @@ public class Sistema extends JFrame {
 	}
 
 	public static void main(String[] args) {
+		ExceptionHandler exceptionHandler = new ExceptionHandler();
+		Thread.currentThread().setUncaughtExceptionHandler(exceptionHandler);
+		Thread.setDefaultUncaughtExceptionHandler(exceptionHandler);
+		
 		Sistema.logger.setLevel( Level.ALL );
 		logger.info( "Initializing the tool" );
 		Sistema app = new Sistema( "Use Case Drawer" );
 		logger.info( "Finish tool initilization" );
+		
+
 	}
 }
